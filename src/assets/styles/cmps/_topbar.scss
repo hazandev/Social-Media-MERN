@@ -1,0 +1,79 @@
+.topbar-container {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  padding: 0 12px;
+  background-color: var(--primeColor);
+  align-items: center;
+  position: sticky;
+  top: 0;
+
+  .topbar-left {
+    flex: 3;
+    .logo {
+        font-size: 1.5rem;
+        color: #fff;
+        font-family: 'Source Code Pro', monospace;
+    }
+  }
+  .topbar-center {
+    .searchbar {
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      background: #fff;
+      border-radius: 12px;
+      input {
+        padding-inline-start: 4px;
+        border-bottom: none;
+        outline: none;
+        width: 80%;
+    }
+    }
+    flex: 5;
+  }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 4;
+    color: #fff;
+    padding-inline-start: 20px;
+    span{
+        cursor: pointer;
+    }
+    .topbar-links {
+        .topbar-link{
+            padding-inline-end: 12px;
+        }
+    }
+    .topbar-icons {
+      display: flex;
+      align-items: center;
+      .topbar-icon{
+        display: flex;
+        align-items: center;
+        .topbar-badge{
+            width: 15px;
+            height: 15px;
+            background: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 11px;
+            position: relative;
+            top: -5px;
+            left: -5px;
+        }
+      }
+    }
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
