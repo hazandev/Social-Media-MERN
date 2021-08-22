@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { Link } from "react-router-dom"
+import { Sidebar } from "../cmps/Sidebar";
+import { Rightbar } from "../cmps/Rightbar";
+import { Feed } from "../cmps/Feed";
 
+// import { Link } from "react-router-dom"
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -13,12 +16,11 @@ export const Home = () => {
     };
   }, []);
 
-
-
-
   return (
-    <div className="home">
-      <p>Hello World</p>
+    <div className="home home-container">
+      <Sidebar />
+      <Feed />
+      <Rightbar />
     </div>
   );
 };

@@ -63,6 +63,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@900&display=swap');
+
+
 /* Flex */
 .flex{
     display: flex;
@@ -574,8 +580,12 @@ font-w2{
     color: #f1c40f
 }
 
+.c-prime{
+    color: var(--primeColor)
+}
+
 .c-info{
-    color: #3498db;
+    color: #73add3;
 }
 
 .c-lead{

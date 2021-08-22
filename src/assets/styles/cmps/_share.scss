@@ -1,0 +1,100 @@
+.share {
+  width: 98%;
+  min-height: 9rem;
+  height: auto;
+  border: 1px solid #9f9f9f;
+  box-shadow: 1px 0.2px 1.3px;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 0.6rem;
+
+  .shareWrapper {
+    .shareTop {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      width: 100%;
+      background: #fff;
+      min-height: 5rem;
+      margin-bottom: 12px;
+      .shareHeader {
+        display: flex;
+        align-items: center;
+        .shareHeaderInput {
+          margin: 8px 10px 12px 0;
+          width: 4rem;
+          font-size: 0.8rem;
+          color: var(--primeColor);
+          font-weight: 600;
+          &:focus {
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #000;
+          }
+        }
+      }
+      .shareHeaderText {
+        font-size: 1.3rem;
+        color: #333;
+        margin: 0 10px 12px 0;
+        font-weight: 600;
+      }
+      .sahreImgProfile {
+        margin-bottom: 12px;
+      }
+      .shareContent {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        input {
+          &:focus {
+            border: none;
+            border-bottom: 1px solid var(--primeColor);
+            outline: none;
+          }
+        }
+        .shareSubjectInput {
+          width: 30%;
+          margin-bottom: 0.8rem;
+        }
+        .shareContentInput {
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+    .shareBottom {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      .shareOptions {
+        display: flex;
+        width: 70%;
+        .shareOption {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          padding-inline-end: 14px;
+          .shareIcon {
+            margin-inline-end: 6px;
+          }
+        }
+      }
+      .postBtn {
+        padding: 4px 8px;
+        border: 1px solid var(--primeColor);
+        &:hover {
+          background-color: var(--primeColor);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.sahreImgProfile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}

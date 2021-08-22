@@ -1,15 +1,32 @@
-.app{
-    width: 100vw;
-    overflow: auto;
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  overflow: auto;
 }
 
-
-.container{
-    display: flex;
-    margin: 0 12px;
-    padding: 0 12px;
-    border-right: 2px solid  var(--spanColor);
-    border-left: 2px solid  var(--spanColor);
-    border-bottom: 2px solid  var(--spanColor);
+.container {
+  position: relative;
+  top: 7vh;
+  display: flex;
+  min-height: 93vh;
+  overflow-y: hidden;
 }
 
+.home-container {
+  display: flex;
+  width: 100%;
+  overflow-y: none;
+  .sidebar {
+    flex: 2;
+    height: 93vh;
+    top: 0;
+    left: 0;
+  }
+  .feed {
+    flex: 7;
+    max-height: 92vh;
+  }
+  .rightbar {
+    flex: 2;
+  }
+}

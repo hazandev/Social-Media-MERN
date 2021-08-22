@@ -1,0 +1,39 @@
+.feed {
+  margin: 0.3rem 0.5rem 0 1rem;
+  padding: 0.3rem 0.3rem 0 0.3rem;
+  width: 98%;
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding-top: 1rem;
+    overflow-y: auto;
+    width: 100%;
+    
+    // TASK-LIST-SCROLLER
+    /*  Scroll Helper   */
+    &::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: rgb(255, 255, 255);
+      border-radius: 4px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: inherit;
+      border-radius: 8px;
+    }
+    height: 62vh;
+  }
+  .post:nth-child(even){
+      position: relative;
+      left: 10%;
+  }
+}
