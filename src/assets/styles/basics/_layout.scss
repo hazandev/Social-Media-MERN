@@ -1,18 +1,5 @@
 .app {
   width: 100vw;
-  min-height: 100vh;
-  overflow: auto;
-}
-
-.container {
-  position: relative;
-  top: 7vh;
-  display: flex;
-  min-height: 93vh;
-  overflow-y: hidden;
-}
-
-.home-container {
   display: flex;
   width: 100%;
   overflow-y: none;
@@ -28,5 +15,22 @@
   }
   .rightbar {
     flex: 2;
+    height: 93vh;
+    top: -70px;
   }
+}
+
+.container {
+  position: relative;
+  top: 7vh;
+  display: flex;
+  min-height: 93vh;
+  overflow-y: hidden;
+}
+
+.home-container {
+  display: flex;
+  width: 100%;
+  overflow-y: none;
+ 
 }

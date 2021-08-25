@@ -34,6 +34,7 @@ export function login(userCreds) {
   console.log(userCreds)
   return async dispatch => {
     try {
+      debugger
       const user = await userService.login(userCreds)
       dispatch({ type: 'SET_USER', user })
     } catch (err) {
@@ -44,6 +45,7 @@ export function login(userCreds) {
 export function signup(userCreds) {
   return async dispatch => {
     try {
+      debugger
       const user = await userService.signup(userCreds)
       dispatch({ type: 'SET_USER', user })
     } catch (err) {

@@ -25,7 +25,7 @@
           margin: 8px 10px 12px 0;
           width: 4rem;
           font-size: 0.8rem;
-          color: var(--primeColor);
+          color: $primeColor;
           font-weight: 600;
           &:focus {
             outline: none;
@@ -50,7 +50,7 @@
         input {
           &:focus {
             border: none;
-            border-bottom: 1px solid var(--primeColor);
+            border-bottom: 1px solid $primeColor;
             outline: none;
           }
         }
@@ -82,9 +82,9 @@
       }
       .postBtn {
         padding: 4px 8px;
-        border: 1px solid var(--primeColor);
+        border: 1px solid $primeColor;
         &:hover {
-          background-color: var(--primeColor);
+          background-color: $primeColor;
           color: #fff;
         }
       }

@@ -10,13 +10,31 @@ export const userService = {
     getById,
     remove,
     update,
-    getLoggedinUser
+    getLoggedinUser,
+    getEmptySignup,
+    getEmptyLogin
 }
 
 window.userService = userService
 // Note: due to async, must run one by one...
 // userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 100, isAdmin: false})
 // userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 100, isAdmin: true})
+
+function getEmptySignup() {
+    return {
+        profilePicture: '',
+        username: '',
+        bio: '',
+        password: '',
+        mail: ''
+    }
+}
+function getEmptyLogin(){
+    return {
+        mail: '',
+        password: ''
+    }
+}
 
 function getUsers() {
     // return storageService.query('user')

@@ -1,0 +1,68 @@
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../store/actions/userActions";
+import { userService } from "../../services/userService";
+import { useForm } from "../../services/generalService/customHooks";
+
+export const LoginForm = () => {
+  const [msg, setMsg] = useState("");
+  const toggleLogin = useSelector((state) => state.toggleLogin);
+  const dispatch = useDispatch();
+
+  const [credLogin, handleChangeLogin, setCredLogin] = useForm(
+    userService.getEmptyLogin()
+  );
+
+  const doLogin = async () => {
+    try {
+      dispatch(login(credLogin));
+      setCredLogin({ username: "", password: "" });
+    } catch (err) {
+      setMsg("Login failed, try again.");
+    }
+  };
+
+  return (
+    <div className="loginForm">
+      <div className="formWrapper">
+        <h2>Login</h2>
+        <form>
+          <input
+            type="text"
+            name="mail"
+            value={credLogin.mail}
+            onChange={handleChangeLogin}
+            placeholder="mail"
+            autoComplete="mail"
+          />
+          <input
+            name="password"
+            type="password"
+            value={credLogin.password}
+            onChange={handleChangeLogin}
+            placeholder="Password"
+            autoComplete="current-password"
+          />
+          <div className="loginActions flex space-between">
+            <button
+              className="login-btn "
+              onClick={() => {
+                doLogin();
+              }}
+            >
+              Login
+            </button>
+            <button
+              className="login-btn login-btn-toggle"
+              onClick={() => dispatch({ type: "TOGGLE_LOGIN" })}
+            >
+              Sign-in
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <p>{msg}</p>
+    </div>
+  );
+};

@@ -1,7 +1,7 @@
 .sidebar {
-  background: var(--primeColor);
+  background: $primeColor;
   border-top-right-radius: 4px;
-  width: 100%;
+  width: 30%;
   position: relative;
   height: 92vh;
   .sidebarWrapper {
@@ -45,7 +45,7 @@
       }
       .item-active {
         background: #fff;
-        color: var(--primeColor);
+        color: $primeColor;
         border-bottom-left-radius: 25px;
         border-top-left-radius: 25px;
         padding-inline-end: 20px;
@@ -61,7 +61,7 @@
 
       .sidebarFriendList {
         height: auto;
-        max-height: 45vh;
+        max-height: 50vh;
         margin: 0.2rem 0rem;
         padding: 0.3rem 0.5rem;
         overflow-y: auto;
@@ -71,7 +71,7 @@
     .creator {
       font-family: "Exo 2", sans-serif;
       font-size: 1rem;
-      color: var(--primeColor);
+      color: $primeColor;
       text-align: left;
       background: #fff;
       padding: 8px 0;
@@ -82,7 +82,7 @@
       left: -12px;
       span {
         font-family: "Pacifico", cursive;
-        color: var(--primeColor);
+        color: $primeColor;
       }
     }
   }

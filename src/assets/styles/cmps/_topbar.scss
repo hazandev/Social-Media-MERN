@@ -4,7 +4,7 @@
   width: 100%;
   padding: 0 12px;
   // background: rgb(24,126,242);
-  background: linear-gradient(130deg, #fff 81%, var(--primeColor) 15%);
+  background: linear-gradient(130deg, #fff 81%, $primeColor 15%);
 
   align-items: center;
   position: fixed;
@@ -16,7 +16,7 @@
     .logo {
         font-size: 1.5rem;
         color: #333;
-        font-family: 'Source Code Pro', monospace;
+        font-family: 'Varela Round', sans-serif;
     }
   }
   .topbar-center {

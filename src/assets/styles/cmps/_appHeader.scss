@@ -12,14 +12,14 @@
 }
 
 .logo span{
-    color: var(--spanColor);
+    color: $spanColor;
     font-family: 'Fredoka One', cursive;
 
 }
 
 
 .selected{
-    border-bottom: 2px solid var(--spanColor);
+    border-bottom: 2px solid $spanColor;
 }
 
 .navbar a{

@@ -28,7 +28,7 @@ button:hover{
 }
 
 .hover-span:hover{
-    color: var(--spanColor)
+    color: $spanColor
 }
 
 .save-btn{
@@ -78,7 +78,7 @@ button:hover{
     width: 100%;
     margin: 0 auto;
     margin-top: 2rem;
-    background-color: var(--spanColor);
+    background-color: $spanColor;
 }
 
 .pay-btn:hover{

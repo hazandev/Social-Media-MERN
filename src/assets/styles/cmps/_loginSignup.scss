@@ -1,0 +1,121 @@
+.loginSignup {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(255, 255, 255);
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 4rem;
+    padding: 1rem;
+    margin-inline-start: 2rem;
+    color: rgb(83, 83, 83);
+    span {
+      color: #55a1ff;
+    }
+    p {
+      font-size: 1.3rem;
+      color: #444444;
+      padding-top: 0.5rem;
+      font-family: "Varela Round", sans-serif;
+    }
+  }
+  .loginSignupWrapper {
+    height: 100%;
+    background: url("../../img/free-vector-blue-polygon-background.jpg") center
+      no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    clip-path: polygon(100% 0, 100% 100%, 100% 100%, 43% 100%, 0 72%, 0 32%);
+  }
+  .leftLogin {
+  }
+  .rightLogin {
+    .loginSignupForm {
+      padding: 1rem;
+      width: 20rem;
+      height: 25rem;
+      background: #fff;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: polygon(0 75%, 0 25%, 100% 0, 100% 100%);
+
+      position: relative;
+      top: -5rem;
+      .loginForm {
+        display: flex;
+        flex-direction: column;
+        h2 {
+          font-size: 2rem;
+          padding-bottom: 1rem;
+          margin-bottom: 1rem;
+        }
+        .formWrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          height: 40vh;
+          padding: 1.5rem;
+          form {
+            display: flex;
+            flex-direction: column;
+            input {
+              font-size: 1rem;
+
+              &:focus {
+                outline: none;
+                border: none;
+                border-bottom: 2px solid $primeColor;
+              }
+              margin-bottom: 1rem;
+            }
+            .loginActions {
+              position: relative;
+              bottom: 0;
+              .login-btn {
+                padding: 8px 12px;
+                background: $primeColor;
+                color: rgb(255, 255, 255);
+                border: 1px solid $primeColor;
+                transition: 0.2s;
+                &:hover {
+                  background-color: #fff;
+                  color: rgb(83, 83, 83);
+                  border: 1px solid $primeColor;
+                }
+              }
+              .login-btn-toggle {
+                background-color: inherit;
+                color: #333;
+                border: 1px solid #333;
+                &:hover {
+                  background-color: #333;
+                  color: #fff;
+                  border: 1px solid #333;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .loginSvg {
+    position: absolute;
+    bottom: 1rem;
+    width: 20rem;
+    height: 10rem;
+  }
+  .logoSvg {
+    width: 3rem;
+    height: 4rem;
+    margin-inline-end: 1rem;
+    position: relative;
+    top: 0.2rem;
+  }
+}
