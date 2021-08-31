@@ -12,7 +12,8 @@ export const utilService = {
   getIsOverflowY,
   mapArrayToObject,
   hexToRGB,
-  randColor
+  randColor,
+  getWindowDimensions
 }
 
 function delay(ms = 1500) {
@@ -163,3 +164,12 @@ function randColor(count) {
 
   return colors
 }
+
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+};

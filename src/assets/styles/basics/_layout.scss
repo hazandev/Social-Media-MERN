@@ -1,36 +1,17 @@
 .app {
-  width: 100vw;
-  display: flex;
-  width: 100%;
-  overflow-y: none;
-  .sidebar {
-    flex: 2;
-    height: 93vh;
-    top: 0;
-    left: 0;
-  }
-  .feed {
-    flex: 7;
-    max-height: 92vh;
-  }
-  .rightbar {
-    flex: 2;
-    height: 93vh;
-    top: -70px;
-  }
-}
-
-.container {
-  position: relative;
-  top: 7vh;
-  display: flex;
-  min-height: 93vh;
+  height: 100vh;
   overflow-y: hidden;
-}
-
-.home-container {
-  display: flex;
-  width: 100%;
-  overflow-y: none;
- 
+  .container {
+    display: flex;
+    width: 100%;
+    overflow-y: none;
+  }
+  .topbar{
+    display: flex;
+    height: 7vh;
+  }
+  .home{
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -6,7 +6,7 @@
   box-shadow: 1px 0.2px 1.3px;
   border-radius: 4px;
   padding: 1rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 
   .shareWrapper {
     .shareTop {
@@ -17,12 +17,11 @@
       width: 100%;
       background: #fff;
       min-height: 5rem;
-      margin-bottom: 12px;
       .shareHeader {
         display: flex;
         align-items: center;
         .shareHeaderInput {
-          margin: 8px 10px 12px 0;
+          margin: 0.5rem 0.6rem 0.7rem 0;
           width: 4rem;
           font-size: 0.8rem;
           color: $primeColor;
@@ -41,13 +40,16 @@
         font-weight: 600;
       }
       .sahreImgProfile {
-        margin-bottom: 12px;
+        margin-bottom: 0.7rem;
       }
       .shareContent {
         display: flex;
         flex-direction: column;
         width: 100%;
         input {
+          &::placeholder{
+            font-size: 1rem;
+          }
           &:focus {
             border: none;
             border-bottom: 1px solid $primeColor;
@@ -74,15 +76,16 @@
           display: flex;
           align-items: center;
           cursor: pointer;
-          padding-inline-end: 14px;
+          padding-inline-end: 0.8rem;
           .shareIcon {
-            margin-inline-end: 6px;
+            margin-inline-end: 0.4rem;
           }
         }
       }
       .postBtn {
-        padding: 4px 8px;
+        padding: 0.2rem 0.5rem;
         border: 1px solid $primeColor;
+        font-size: 1rem;
         &:hover {
           background-color: $primeColor;
           color: #fff;
@@ -92,9 +95,9 @@
   }
 }
 .sahreImgProfile {
-  width: 32px;
-  height: 32px;
+  width: 1.6rem;
+  height: 1.6rem;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 10px;
+  margin-right: 0.7rem;
 }

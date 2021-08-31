@@ -1,22 +1,26 @@
-.topbar-container {
+.topbar{
   display: flex;
   height: 7vh;
   width: 100%;
   padding: 0 12px;
-  // background: rgb(24,126,242);
   background: linear-gradient(130deg, #fff 81%, $primeColor 15%);
-
   align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-
   .topbar-left {
     flex: 3;
     .logo {
-        font-size: 1.5rem;
-        color: #333;
-        font-family: 'Varela Round', sans-serif;
+      display: flex;
+      align-items: baseline;
+      font-size: 1.5rem;
+      color: rgb(83, 83, 83);
+      font-family: "Varela Round", sans-serif;
+      span {
+        color: #55a1ff;
+      }
+      .topbarLogoSvg {
+        width: 1.2rem;
+        height: 1.5rem;
+        margin-inline-end: 0.4rem;
+      }
     }
   }
   .topbar-center {
@@ -32,7 +36,7 @@
         border-bottom: none;
         outline: none;
         width: 80%;
-    }
+      }
     }
     flex: 5;
   }
@@ -43,39 +47,39 @@
     justify-content: flex-end;
     flex: 1;
     color: #fff;
-    span{
-        cursor: pointer;
+    span {
+      cursor: pointer;
     }
     .topbar-icons {
       display: flex;
       align-items: center;
-      .search-icon{
+      .search-icon {
         margin-inline-end: 8px;
       }
-      .topbar-icon{
+      .topbar-icon {
         display: flex;
         align-items: center;
         color: #fff;
         cursor: pointer;
-        .topbar-badge{
-            width: 15px;
-            height: 15px;
-            background: rgb(243, 80, 80);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 11px;
-            position: relative;
-            top: -10px;
-            left: -7px;
+        .topbar-badge {
+          width: 0.9rem;
+          height: 0.9rem;
+          background: rgb(243, 80, 80);
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          font-size: 0.7rem;
+          position: relative;
+          top: -10px;
+          left: -7px;
         }
       }
     }
     img {
-      width: 32px;
-      height: 32px;
+      width: 1.8rem;
+      height: 1.8rem;
       border-radius: 50%;
       object-fit: cover;
     }

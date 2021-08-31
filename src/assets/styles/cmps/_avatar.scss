@@ -1,27 +1,30 @@
 .sidebarFriend {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   margin-bottom: 15px;
   cursor: pointer;
   color: #fff;
-  .sidebarFriendImg {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
+  font-size: 0.8rem;
+  .imgChat {
+    .sidebarFriendImg {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
   }
-  .sidebarFriendName{
-    font-size: 0.8rem;
+  .sidebarFriendName {
+    font-size: 0.5rem;
   }
-  .chatOnline{
-    width: 12px;
-    height: 12px;
+  .chatOnline {
+    width: 10px;
+    height: 7px;
+    position: relative;
     background: lawngreen;
     border-radius: 50%;
-    position: relative;
     top: 12px;
-    left: -45px;
-    z-index: 3;
+    left: -40px;
   }
 }

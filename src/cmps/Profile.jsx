@@ -1,10 +1,6 @@
-import { Topbar } from "../cmps/Topbar";
-import { Sidebar } from "../cmps/Sidebar";
 import { Post } from "../cmps/Post";
-import { Feed } from "../cmps/Feed";
-
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import { Posts, Users } from "../data/dummyData";
 
 export const Profile = () => {

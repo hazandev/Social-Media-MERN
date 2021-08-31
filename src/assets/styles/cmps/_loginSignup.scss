@@ -61,6 +61,8 @@
           justify-content: flex-start;
           height: 40vh;
           padding: 1.5rem;
+          position: relative;
+          top: -1rem;
           form {
             display: flex;
             flex-direction: column;
@@ -78,7 +80,7 @@
               position: relative;
               bottom: 0;
               .login-btn {
-                padding: 8px 12px;
+                padding: 0.5rem 0.7rem;
                 background: $primeColor;
                 color: rgb(255, 255, 255);
                 border: 1px solid $primeColor;
@@ -103,6 +105,18 @@
           }
         }
       }
+      .signupForm {
+        .formWrapper {
+          h2 {
+            margin-bottom: 6px;
+          }
+          form {
+            input {
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
     }
   }
   .loginSvg {
@@ -117,5 +131,25 @@
     margin-inline-end: 1rem;
     position: relative;
     top: 0.2rem;
+  }
+  .creatorLogin {
+    position: relative;
+    top: -3rem;
+    font-family: "Exo 2", sans-serif;
+    width: 12rem;
+    border: 0.1rem solid $primeColor;
+    font-size: 1.2rem;
+    color: $primeColor;
+    text-align: left;
+    background: #fff;
+    padding: 0.3rem 0;
+    padding-inline-start: 1rem;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    position: relative;
+    left: -0.8rem;
+    span {
+      font-family: "Pacifico", cursive;
+    }
   }
 }

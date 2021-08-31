@@ -11,17 +11,10 @@ export const LoginSignup = () => {
   const isLoading = useSelector((state) => state.isLoading);
 
   useEffect(() => {
-    console.log(toggleLogin);
-
-    console.log("mount login");
     if (loggedInUser) {
-      history.push("/home");
+      history.push(`/home`);
     }
-  }, []);
-
-  // useEffect(() => {
-  //   console.log(toggleLogin);
-  // }, [toggleLogin])
+  }, [loggedInUser]);
 
   return (
     <div className="loginSignup">
@@ -38,6 +31,9 @@ export const LoginSignup = () => {
           </div>
         </div>
       </div>
+      <p className="creatorLogin">
+        Hazan-<span>dev</span>
+      </p>
     </div>
   );
 };

@@ -31,11 +31,17 @@ export function removeUser(userId) {
 
 
 export function login(userCreds) {
-  console.log(userCreds)
   return async dispatch => {
     try {
-      debugger
-      const user = await userService.login(userCreds)
+      // const user = await userService.login(userCreds)
+      const user = {
+        id: 1,
+        profilePicture: 'img/person/1.jpeg',
+        username: "Safak Kocaoglu",
+        bio: 'Node developer',
+        password: "123456",
+        mail: "Safak@gmail.com"
+      }
       dispatch({ type: 'SET_USER', user })
     } catch (err) {
       console.log('UserActions: err in login', err)
@@ -45,8 +51,15 @@ export function login(userCreds) {
 export function signup(userCreds) {
   return async dispatch => {
     try {
-      debugger
-      const user = await userService.signup(userCreds)
+      // const user = await userService.signup(userCreds)
+      const user = {
+        id: 1,
+        profilePicture: 'img/person/1.jpeg',
+        username: "Safak Kocaoglu",
+        bio: 'Node developer',
+        password: "123456",
+        mail: "Safak@gmail.com"
+      }
       dispatch({ type: 'SET_USER', user })
     } catch (err) {
       console.log('UserActions: err in signup', err)

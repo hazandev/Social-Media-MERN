@@ -1,7 +1,7 @@
 import { PermMedia, Label, EmojiEmotions } from "@material-ui/icons";
-import ComputerIcon from "@material-ui/icons/Computer";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 export const Share = () => {
+  
   return (
     <div className="share">
       <div className="shareWrapper">

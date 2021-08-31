@@ -1,6 +1,5 @@
-// import { storageService } from './asyncStorageService'
+import { storageService } from './generalService/asyncStorageService'
 import { httpService } from './generalService/httpService'
-const SCORE_FOR_REVIEW = 10
 
 export const userService = {
     login,
@@ -29,7 +28,7 @@ function getEmptySignup() {
         mail: ''
     }
 }
-function getEmptyLogin(){
+function getEmptyLogin() {
     return {
         mail: '',
         password: ''
@@ -58,17 +57,33 @@ async function update(user) {
 }
 
 async function login(userCred) {
+    // debugger
     // const users = await storageService.query('user')
     // const user = users.find(user => user.username === userCred.username)
     // return _saveLocalUser(user)
-
-    const user = await httpService.post('auth/login', userCred)
-    if (user) return _saveLocalUser(user)
+    // const user = await httpService.post('auth/login', userCred)
+    // if (user) return _saveLocalUser(user)
+    return {
+        id: 1,
+        profilePicture: 'img/person/1.jpeg',
+        username: "Safak Kocaoglu",
+        bio: 'Node developer',
+        password: "123456",
+        mail: "Safak@gmail.com"
+    }
 }
 async function signup(userCred) {
     // const user = await storageService.post('user', userCred)
-    const user = await httpService.post('auth/signup', userCred)
-    return _saveLocalUser(user)
+    // const user = await httpService.post('auth/signup', userCred)
+    // return _saveLocalUser(user)
+    return {
+        id: 1,
+        profilePicture: 'img/person/1.jpeg',
+        username: "Safak Kocaoglu",
+        bio: 'Node developer',
+        password: "123456",
+        mail: "Safak@gmail.com"
+    }
 }
 async function logout() {
     sessionStorage.clear()

@@ -1,5 +1,5 @@
 import { MoreVert } from "@material-ui/icons";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Users } from "../data/dummyData";
 
@@ -15,7 +15,7 @@ export const Post = ({ post }) => {
       {post && (
         <div className="postWrapper">
           <div className="postTop">
-            <Link className="postTopLeft" to={`/${post.userId}`}>
+            <Link className="postTopLeft" to={`/home/${post.userId}`}>
               <img
                 src={`img/person/${post.userId}.jpeg`}
                 alt=""

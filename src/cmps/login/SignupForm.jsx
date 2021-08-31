@@ -4,7 +4,7 @@ import { signup } from "../../store/actions/userActions";
 import { userService } from "../../services/userService";
 import { useForm } from "../../services/generalService/customHooks";
 
-export const SignupForm = ({ setToggleLogin }) => {
+export const SignupForm = () => {
   const [msg, setMsg] = useState("");
   const toggleLogin = useSelector((state) => state.toggleLogin);
   const [credSignup, handleChangeSignup, setCredSignup] = useForm(
@@ -13,28 +13,25 @@ export const SignupForm = ({ setToggleLogin }) => {
   const dispatch = useDispatch();
 
   const doSignup = async () => {
-    const { username, password, fullname } = credSignup;
-    if (!username || !password || !fullname) {
+    const { username, password, confirmPassword, mail } = credSignup;
+    if (!username || !password || !confirmPassword || !mail) {
       return setMsg("All inputs are required");
     }
-    const signupCreds = { username, password, fullname };
+    const signupCreds = { username, password, mail, confirmPassword };
     dispatch(signup(signupCreds));
-    setCredSignup({ username: "", password: "", fullname: "" });
+    setCredSignup({
+      username: "",
+      password: "",
+      confirmPassword: "",
+      mail: "",
+    });
   };
 
   return (
-    <div className="loginForm">
+    <div className="loginForm signupForm">
       <div className="formWrapper">
         <h2>Signup</h2>
         <form>
-          <input
-            type="text"
-            name="fullname"
-            value={credSignup.fullname}
-            onChange={handleChangeSignup}
-            placeholder="Full name"
-            autoComplete="fullname"
-          />
           <input
             type="text"
             name="username"
@@ -44,12 +41,28 @@ export const SignupForm = ({ setToggleLogin }) => {
             autoComplete="username"
           />
           <input
+            name="mail"
+            type="mail"
+            value={credSignup.mail}
+            onChange={handleChangeSignup}
+            placeholder="mail"
+            autoComplete="mail"
+          />
+          <input
             name="password"
             type="password"
             value={credSignup.password}
             onChange={handleChangeSignup}
             placeholder="Password"
             autoComplete="current-password"
+          />
+          <input
+            name="confirmPassword"
+            type="confirmPassword"
+            value={credSignup.confirmPassword}
+            onChange={handleChangeSignup}
+            placeholder="Confirm Password"
+            autoComplete="confirm-password"
           />
           <div className="loginActions flex space-between">
             <button

@@ -1,0 +1,214 @@
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .app {
+    height: 100vh;
+    overflow-y: hidden;
+    .container {
+      display: flex;
+      width: 100%;
+      overflow-y: none;
+    }
+    .loginSignup {
+      .creatorLogin{
+        top: -5rem;
+      }
+      .logo {
+        font-size: 2rem;
+        margin-inline-start: 8px;
+        .lead {
+          font-size: 10px;
+        }
+        img {
+          width: 1.8rem;
+          height: 2.2rem;
+        }
+      }
+      .loginSignupWrapper {
+        position: relative;
+        top: -1rem;
+        clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 0 80%, 0 32%);
+      }
+      .rightLogin {
+        .loginSignupForm {
+          padding: 0.5rem;
+          top: 2rem;
+          .loginForm {
+            .formWrapper {
+              padding-top: 0.5rem;
+
+            }
+            h2 {
+              font-size: 1.5rem;
+              padding-bottom: 0.3rem;
+              margin-bottom: 0.3rem;
+            }
+          }
+        }
+      }
+    }
+    .topbar {
+      height: 7vh;
+      padding-top: 4px;
+      .topbar-right {
+        .topbar-icons {
+          display: none;
+        }
+      }
+    }
+    .sidebar {
+      flex: 1;
+    }
+    .feed {
+      flex: 8;
+      .share {
+        padding: 0.4rem;
+        margin-bottom: 0.1rem;
+      }
+      .posts {
+        .post {
+          .postBottomLeft {
+            width: 20%;
+          }
+        }
+      }
+    }
+    .rightbar {
+      display: none;
+      flex: 2;
+    }
+    .share {
+      padding: 12px;
+      .shareWrapper {
+        .shareTop {
+          width: 100%;
+          .shareHeader {
+            .shareHeaderInput {
+              width: 4.5rem;
+            }
+          }
+        }
+        .shareContent {
+          width: 60%;
+        }
+        .shareOptions {
+          display: flex;
+          .shareOptionText {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 446px) {
+  html {
+    font-size: 12px;
+  }
+  .app {
+    height: 100vh;
+    overflow-y: hidden;
+    .container {
+      display: flex;
+      width: 100%;
+      overflow-y: none;
+    }
+    .loginSignup {
+      .logo {
+        font-size: 2rem;
+        margin-inline-start: 8px;
+        .lead {
+          font-size: 10px;
+        }
+        img {
+          width: 1.8rem;
+          height: 2.2rem;
+        }
+      }
+      .loginSignupWrapper {
+        position: relative;
+        top: -1rem;
+        clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 0 80%, 0 32%);
+      }
+      .rightLogin {
+        .loginSignupForm {
+          padding: 0.5rem;
+          top: 2rem;
+          .loginForm {
+            .formWrapper {
+              padding-top: 0.5rem;
+              top: 0.5rem;
+              .loginActions{
+                .login-btn {
+                  padding: 0.4rem 0.5rem;
+                  font-size: 0.8rem;
+                }
+              }
+            }
+            h2 {
+              font-size: 1.5rem;
+              padding-bottom: 0.3rem;
+              margin-bottom: 0.3rem;
+            }
+            
+          }
+        }
+      }
+    }
+    .topbar {
+      height: 7vh;
+      padding-top: 4px;
+      .topbar-right {
+        .topbar-icons {
+          display: none;
+        }
+      }
+    }
+    .sidebar {
+      display: none;
+      flex: 2;
+    }
+    .feed {
+      width: 100vw;
+      .share {
+        padding: 0.4rem;
+        margin-bottom: 0.1rem;
+      }
+      .posts {
+        .post {
+          .postBottomLeft {
+            width: 20%;
+          }
+        }
+      }
+    }
+    .rightbar {
+      display: none;
+      flex: 2;
+    }
+    .share {
+      padding: 12px;
+      .shareWrapper {
+        .shareTop {
+          width: 100%;
+          .shareHeader {
+            .shareHeaderInput {
+              width: 4.5rem;
+            }
+          }
+        }
+        .shareContent {
+          width: 60%;
+        }
+        .shareOptions {
+          display: flex;
+          .shareOptionText {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

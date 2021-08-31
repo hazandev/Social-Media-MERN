@@ -5,49 +5,54 @@ export const Users = [
     username: "Safak Kocaoglu",
     bio: 'Node developer',
     password: "123456",
-    mail: "Safak@gmail.com"
+    mail: "Safak@gmail.com",
+    online: true
   }
   ,
   {
     id: 2,
     profilePicture: 'img/person/2.jpeg',
     username: "Janell Shrum",
-    bio: 'Angular developer', password: "123456", mail: "Janell@gmail.com"
+    bio: 'Angular developer', password: "123456", mail: "Janell@gmail.com",
+    online: true
 
   },
   {
     id: 3,
     profilePicture: 'img/person/3.jpeg',
     username: "Alex Durden",
-    bio: 'Vue developer', password: "123456", mail: "Alex@gmail.com"
+    bio: 'Vue developer', password: "123456", mail: "Alex@gmail.com", online: true
 
   },
   {
     id: 4,
     profilePicture: 'img/person/4.jpeg',
     username: "Dora Hawks",
-    bio: 'Frontend developer', password: "123456", mail: "Dora@gmail.com"
+    bio: 'Frontend developer', password: "123456", mail: "Dora@gmail.com",
+    online: true
 
   },
   {
     id: 5,
     profilePicture: 'img/person/5.jpeg',
     username: "Thomas Holden",
-    bio: 'Slack developer', password: "123456", mail: "Thomas@gmail.com"
+    bio: 'Slack developer', password: "123456", mail: "Thomas@gmail.com", online: true
 
   },
   {
     id: 6,
     profilePicture: 'img/person/6.jpeg',
     username: "Shirley Beauchamp",
-    bio: 'React developer', password: "123456", mail: "Shirley@gmail.com"
+    bio: 'React developer', password: "123456", mail: "Shirley@gmail.com",
+    online: true
 
   },
   {
     id: 7,
     profilePicture: 'img/person/7.jpeg',
     username: "Travis Bennett",
-    bio: 'React developer', password: "123456", mail: "Travis@gmail.com"
+    bio: 'React developer', password: "123456", mail: "Travis@gmail.com",
+    online: true
 
 
   },
@@ -55,14 +60,16 @@ export const Users = [
     id: 8,
     profilePicture: 'img/person/8.jpeg',
     username: "Kristen Thomas",
-    bio: 'React developer', password: "123456", mail: "Kristen@gmail.com"
+    bio: 'React developer', password: "123456", mail: "Kristen@gmail.com",
+    online: false
 
   },
   {
     id: 9,
     profilePicture: 'img/person/9.jpeg',
     username: "Gary Duty",
-    bio: 'React developer', password: "123456", mail: "Gary@gmail.com"
+    bio: 'React developer', password: "123456", mail: "Gary@gmail.com",
+    online: false
 
 
   },
@@ -71,7 +78,7 @@ export const Users = [
     profilePicture: 'img/person/10.jpeg',
     username: "Safak Kocaoglu",
     bio: 'Django developer', password: "123456", mail: "Safak@gmail.com"
-
+    , online: true
   },
 ];
 
