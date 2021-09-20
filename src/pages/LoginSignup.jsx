@@ -12,7 +12,7 @@ export const LoginSignup = () => {
 
   useEffect(() => {
     if (loggedInUser) {
-      history.push(`/home`);
+      history.push(`/home/feed`);
     }
   }, [loggedInUser]);
 

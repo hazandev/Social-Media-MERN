@@ -10,8 +10,82 @@
       width: 100%;
       overflow-y: none;
     }
+    .profile {
+      width: 90%;
+      margin: 0 auto;
+
+      .avatarFriend {
+        width: 2.5rem;
+        height: 3rem;
+        gap: 0.1rem;
+        img {
+          width: 2.5rem;
+          height: 3rem;
+          border-radius: 3px;
+        }
+      }
+
+      .profileRight {
+        width: 90%;
+        margin: 0 auto;
+      }
+      .profileCover {
+        height: 12.5rem;
+        width: 100%;
+        position: relative;
+        left: -3rem;
+      }
+      .profileCoverImg {
+        margin-top: 1rem;
+        width: 100%;
+        height: 9.3rem;
+        object-fit: cover;
+        border: 4px solid #f2ca18;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        position: relative;
+      }
+
+      .profileUserImg {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        left: -8.125rem;
+        margin: auto;
+        top: 7.25rem;
+        border: 3px solid white;
+      }
+      .profileInfo {
+        position: relative;
+        left: 3rem;
+        padding: 0.5rem;
+        .profileInfoName {
+          font-size: 1rem;
+        }
+
+        .profileInfoDesc {
+          font-size: 0.8rem;
+          font-weight: 300;
+          color: $primeColor;
+        }
+      }
+      .shareProfile {
+        width: 100%;
+        margin: 0 auto;
+      }
+      .profilePosts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0rem;
+      }
+    }
     .loginSignup {
-      .creatorLogin{
+      .creatorLogin {
         top: -5rem;
       }
       .logo {
@@ -37,7 +111,6 @@
           .loginForm {
             .formWrapper {
               padding-top: 0.5rem;
-
             }
             h2 {
               font-size: 1.5rem;
@@ -69,15 +142,18 @@
       .posts {
         .post {
           .postBottomLeft {
-            width: 20%;
+            .PostBottomIcons {
+              width: 22rem;
+            }
           }
         }
       }
     }
     .rightbar {
-      display: none;
+      // display: none;
       flex: 2;
     }
+
     .share {
       padding: 12px;
       .shareWrapper {
@@ -140,7 +216,7 @@
             .formWrapper {
               padding-top: 0.5rem;
               top: 0.5rem;
-              .loginActions{
+              .loginActions {
                 .login-btn {
                   padding: 0.4rem 0.5rem;
                   font-size: 0.8rem;
@@ -152,7 +228,6 @@
               padding-bottom: 0.3rem;
               margin-bottom: 0.3rem;
             }
-            
           }
         }
       }

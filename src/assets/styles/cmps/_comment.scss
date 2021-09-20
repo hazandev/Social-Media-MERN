@@ -1,0 +1,21 @@
+.comment{
+    margin: 0 0 1.2rem 0;
+    .topComment{
+        display: flex;
+        align-items: center;
+        img{
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            margin-inline-end: 0.5rem;
+        }
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    .contentComment{
+        width: 80%;
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+    }
+
+}

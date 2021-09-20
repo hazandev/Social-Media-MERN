@@ -1,6 +1,6 @@
 .topbar{
   display: flex;
-  height: 7vh;
+  height: 50px;
   width: 100%;
   padding: 0 12px;
   background: linear-gradient(130deg, #fff 81%, $primeColor 15%);
@@ -14,7 +14,7 @@
       color: rgb(83, 83, 83);
       font-family: "Varela Round", sans-serif;
       span {
-        color: #55a1ff;
+        color: $primeColor;
       }
       .topbarLogoSvg {
         width: 1.2rem;

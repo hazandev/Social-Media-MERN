@@ -1,0 +1,46 @@
+.addArticle {
+  width: 70vw;
+  height: 90vh;
+  .addArticleWrapper {
+    margin: 2rem;
+    .topEditor {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        margin-inline-end: 2rem;
+      }
+      .topArticleForm {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      .subjectArticle {
+        width: 50%;
+        #subjectInput {
+          font-size: 2rem;
+        }
+      }
+    }
+    .contentEditor {
+      .boxContent {
+        background: rgba(228, 228, 228, 0.493);
+        padding: 1rem;
+      }
+    }
+    .btn-publise {
+      float: right;
+      border: 1px solid #333;
+      padding: 0.3rem 0.7rem;
+      font-size: 1rem;
+      &:hover {
+        background: #333;
+        color: #fff;
+      }
+    }
+  }
+}

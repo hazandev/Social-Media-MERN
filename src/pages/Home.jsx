@@ -1,83 +1,48 @@
-// import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Sidebar } from "../cmps/Sidebar";
-import { Rightbar } from "../cmps/Rightbar";
 import { Topbar } from "../cmps/Topbar";
-import { Feed } from "../cmps/Feed";
-import { Course } from "../cmps/Course";
-import { Question } from "../cmps/Question";
-import { Profile } from "../cmps/Profile";
-// import {sidebarRoutes} from '../routes.js'
-
-// export const Home = () => {
-//   return (
-//     <div className="home">
-//       <Topbar />
-//       <div className="container">
-//         <Sidebar />
-//         <Switch>{()=>{debugger}}
-//             {sidebarRoutes.map((route, index) => (
-//               <Route
-//                 key={index}
-//                 path={route.path}
-//                 // exact={route.exact}
-//               />
-//             ))}
-//           </Switch>
-//         <Rightbar />
-//       </div>
-//     </div>
-//   );
-// };
-
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import { Courses } from "../data/dummyData";
-
-const routes = [
-  {
-    path: "/home/feed",
-    exact: true,
-    main: () => <Feed/>
-  },
-  {
-    path: "/home/course",
-    main: () => <Course/>
-  },
-  {
-    path: "/home/question",
-    main: () => <Question/>
-  },
-  {
-    path: "/:id",
-    main: () => <Profile/>
-  }
-];
-
+import { sidebarRoutes } from "../routes.js";
+import { useSelector } from "react-redux";
+import {Search} from './Search'
+import { useEffect } from "react";
 export const Home = () => {
+  const searchText = useSelector((state) => state.uiModule.searchText);
+
   return (
     <Router>
-      <Topbar/>
+      <Topbar />
       <div className="container">
-        <Sidebar/>
-          <Switch>
-            {routes.map((route, index) => (
-              // Render more <Route>s with the same paths as
-              // above, but different components this time.
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                children={<route.main />}
-              />
-            ))}
-          </Switch>
-      <Rightbar/>
+        <Sidebar />
+        {searchText.length === 0 ? 
+          <div className="animate__animated animate__fadeInLeft animate__faster centerContent">
+            <Switch>
+              {sidebarRoutes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  children={<route.main />}
+                />
+              ))}
+            </Switch>
+          </div>
+        :
+         <div className="w-100">
+           <Search/>
+         </div>
+        
+        }
+            <Switch>
+              {sidebarRoutes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  children={<route.right />}
+                />
+              ))}
+            </Switch>
       </div>
     </Router>
   );
-}
+};

@@ -5,13 +5,26 @@
     display: flex;
     width: 100%;
     overflow-y: none;
+    justify-content: space-between;
+    .centerContent {
+      width: 60%;
+      max-width: 60rem;
+    }
   }
-  .topbar{
+  .topbar {
     display: flex;
-    height: 7vh;
+    height: 40px;
   }
-  .home{
+  .home {
     display: flex;
     flex-direction: column;
+  }
+  .profile {
+  }
+
+  .question {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }

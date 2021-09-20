@@ -1,5 +1,6 @@
 const initialState = {
-    toggleLogin: true
+    toggleLogin: true,
+    searchText: ''
 }
 
 export function uiReducer(state = initialState, action = {}) {
@@ -7,6 +8,8 @@ export function uiReducer(state = initialState, action = {}) {
         case 'TOGGLE_LOGIN':
             const val = !state.toggleLogin;
             return { ...state, toggleLogin: val }
+        case 'EDIT_SEARCH':
+            return { ...state, searchText: action.searchText }
         default:
             return state
     }

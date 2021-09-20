@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-
+  transition: 0.1s;
 }
 
 ::selection {
@@ -40,4 +40,8 @@ input {
 
 button{
   cursor: pointer;
+}
+
+.article{
+  font-family: 'Kaisei Tokumin', serif;
 }

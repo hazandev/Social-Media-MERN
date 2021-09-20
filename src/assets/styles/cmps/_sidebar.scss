@@ -3,6 +3,7 @@
   border-top-right-radius: 4px;
   height: 93vh;
   width: 11rem;
+  z-index: 2;
   .sidebarWrapper {
     width: 100%;
     height: 100%;
@@ -37,6 +38,7 @@
         cursor: pointer;
         .sidebarIcon {
           font-size: 1.2rem;
+          margin: 0 0.5rem;
         }
         .sidebarListItemText {
           padding-inline-start: 0.4rem;

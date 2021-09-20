@@ -1,11 +1,11 @@
-import { ProductPreview } from "./ProductPreview";
+import { CoursePreview } from "./CoursePreview";
 import { Courses } from "../../data/dummyData";
 
-export const ProductList = () => {
+export const CourseList = () => {
   return (
     <div className="productList">
       {Courses.map((course) => (
-        <ProductPreview key={course.id} course={course} />
+        <CoursePreview key={course.id} course={course} />
       ))}
     </div>
   );

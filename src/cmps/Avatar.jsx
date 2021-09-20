@@ -1,12 +1,15 @@
-export const Avatar = ({ user }) => {
+export const Avatar = ({ user, chat = true }) => {
   return (
-    <li className="sidebarFriend ">
+    <li className="sidebarFriend searchAvatarUser ">
       <div className="imgChat">
         <img className="sidebarFriendImg" src={user.profilePicture} alt="" />
       </div>
-      <span className="chatOnline"></span>
+      
+      {chat && user.online && <span className="chatOnline"></span>}
+      {chat &&  !user.online && <span className="chatOffline"></span>}
+
       <span className="sidebarFriendName"></span>
-      {user.username} 
+      {user.username}
     </li>
   );
 };

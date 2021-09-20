@@ -1,13 +1,19 @@
 import { PermMedia, Label, EmojiEmotions } from "@material-ui/icons";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 export const Share = () => {
-  
+  const loggedInUser = useSelector((state) => state.userModule.loggedInUser);
+  useEffect(() => {
+    console.log(loggedInUser);
+  }, [])
   return (
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
           <div className="shareHeader">
-            <img src="img/person/1.jpeg" alt="" className="sahreImgProfile" />
+            {()=>{debugger}}
+            <img src={loggedInUser.profilePicture} alt="" className="sahreImgProfile" />
             <h4 className="shareHeaderText">Wisedom</h4>
             <input
               type="text"

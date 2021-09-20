@@ -1,0 +1,10 @@
+.course{
+    width: 100%;
+    .courseList{
+        display: flex;
+        flex-wrap: wrap;
+        .courseSearch{
+            margin: 1rem;
+        }
+    }
+}

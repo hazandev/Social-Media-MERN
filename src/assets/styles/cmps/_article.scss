@@ -1,0 +1,95 @@
+.article {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 2rem 2rem;
+  height: 95vh;
+  overflow-y: auto;
+  .articleTop {
+    .infoAuthor {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .bioAuthor {
+        //   background: $primeColor;
+        color: $primeColor;
+        border-radius: 3px;
+        padding: 0.4rem 0rem;
+        font-size: 0.7rem;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+    }
+    h3 {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+      font-family: "Kaisei Tokumin", serif;
+    }
+    .detailsAuthor {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        margin-inline-end: 1rem;
+      }
+    }
+    .detailsArticle {
+    }
+    .tags {
+      display: flex;
+      flex-direction: row;
+      margin-top: 0.5rem;
+      h6 {
+        font-weight: 600;
+        margin-inline-end: 0.3rem;
+      }
+      .tag {
+        margin-inline-end: 0.5rem;
+      }
+    }
+  }
+  .articleContent {
+    line-height: 1.3rem;
+    p {
+      margin: 1rem 0;
+    }
+    border-bottom: 3px solid #ffcd4c;
+
+  }
+  .articleBottom {
+    .addComment {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 1rem 0;
+      input{
+        width: 70%;
+        font-size: 1.1rem;
+        &:focus{
+          outline: none;
+          border: none;
+          border-bottom: 1px solid $primeColor;
+        }
+      }
+      button {
+        margin: 0;
+        margin-inline-start: 2rem;
+        border: 1px solid #333;
+        padding: 4px 8px;
+        &:hover{
+          border: 1px solid $primeColor;          
+        }
+      }
+    }
+    .comments {
+      h6 {
+        padding: 0.5rem 0;
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.blog {
+  width: 100%;
+  margin: 0 1rem;
+  .blogWrapper {
+    width: 100%;
+    padding-inline-end: 2rem;
+    .blogTop {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      .searchArticle {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        form {
+          margin-inline-end: 1rem;
+        }
+      }
+      a {
+        background: #fff;
+        color: #4d4d4d;
+        border: 1.5px solid #4d4d4d;
+        padding: 0.4rem 0.6rem;
+        position: relative;
+        top: -0.4rem;
+        margin-inline-end: 0.5rem;
+
+        &:hover{
+          background: #333;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .listArticle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+  }
+}
+
+.articlePreview {
+  width: 22rem;
+  height: 8rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  border: 1.5px solid #4d4d4d;
+  border-radius: 3px;
+  display: flex;
+  justify-content: flex-start;
+
+  &:hover {
+    box-shadow: 4px 0.5px 0px 0px;
+    .leftCardArticle {
+      background-color: rgb(53, 53, 53);
+      color: #fff;
+    }
+    .bottomCard {
+      .eyesIcon {
+        color: $primeColor;
+      }
+    }
+  }
+
+  .leftCardArticle {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 0.5rem 0.7rem;
+    border-right: 1px solid #333;
+    img {
+      width: 5rem;
+      height: 4rem;
+      margin-inline-end: 1rem;
+      clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+      margin-bottom: 0.4rem;
+    }
+  }
+  .rightCardArticle {
+    width: 70%;
+    padding-inline-start: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem 0.7rem;
+    z-index: 2;
+    .subjectArticle {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      font-family: "Kaisei Tokumin", serif;
+      line-height: 1.2rem;
+      span {
+        padding: 1rem 0;
+        color: $primeColor;
+        font-size: 0.9rem;
+        font-family: "Roboto", sans-serif;
+      }
+    }
+    .bottomCard {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      z-index: 3;
+      .leftBottomCard {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        .viewArticle {
+          display: flex;
+          align-items: center;
+          justify-content: baseline;
+          padding-inline-end: 1.5rem;
+          span {
+            font-weight: 600;
+            margin-inline-start: 0.2rem;
+          }
+        }
+        .dateArticle {
+          font-family: "Kaisei Tokumin", serif;
+        }
+      }
+      .rightBottomCard{
+        .delIcon{
+          color: #333;
+          &:hover{
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
