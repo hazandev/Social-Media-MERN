@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const CoursePreview = ({course}) => {
   return (
     <div className="productPreview courseSearch">
@@ -7,7 +9,7 @@ export const CoursePreview = ({course}) => {
       </div>
       <div className="productBottom">
         <span>Price: {course.price}$</span>
-        <button className="btn productBuy">Learn</button>
+        <Link className="btn productBuy" to={`/home/course/${course.id}`}>Learn</Link>
       </div>
     </div>
   );

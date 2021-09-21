@@ -60,7 +60,7 @@ export const Blog = ({ userId = null }) => {
               </TextField>
             </form>
           </div>
-          <Link to="/home/blog/add">Add Article</Link>
+          <Link to="/home/blog/add">New</Link>
         </div>
         <div className="listArticle">
           {articles &&

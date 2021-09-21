@@ -2,6 +2,7 @@ import { MoreVert } from "@material-ui/icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Users } from "../data/dummyData";
+import EmojiObjectsOutlinedIcon from "@material-ui/icons/EmojiObjectsOutlined";
 
 export const Post = ({ post }) => {
   const [wise, setWise] = useState(post.wise);
@@ -41,7 +42,9 @@ export const Post = ({ post }) => {
           <div className="postBottom">
             <div className="postBottomLeft">
               <div className="PostBottomIcons">
-                <img src="img/light-bulb.png" alt="" />
+                <i>
+                  <EmojiObjectsOutlinedIcon className={`${isWised}`}/>
+                </i>
                 <span className="postWiseCounter" onClick={() => wiseHandler()}>
                   {wise} Wise
                 </span>

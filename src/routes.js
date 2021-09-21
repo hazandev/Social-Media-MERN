@@ -9,7 +9,8 @@ import { Profile } from "./cmps/Profile";
 import { ProfileSide } from "./cmps/ProfileSide";
 import { AddArticle } from './cmps/article/AddArticle';
 import { ProfileArticle } from './cmps/ProfileArticle';
-
+import { CourseDetails } from './cmps/course/CourseDetails';
+import { CourseSide } from './cmps/course/CourseSide';
 export const routes = [
     {
         path: '/home',
@@ -30,12 +31,6 @@ export const sidebarRoutes = [
         right: () => <Rightbar />
     },
     {
-        path: "/home/course",
-        main: () => <Course />,
-        right: () => <span className="w-20"></span>
-
-    },
-    {
         path: "/home/blog/add",
         main: () => <AddArticle />,
         right: () => <span className="w-20"></span>
@@ -45,9 +40,15 @@ export const sidebarRoutes = [
         main: () => <Article />,
         right: () => <span className="w-20"></span>
     }, {
-        path: "/home/:id/article",
-        main: () => <ProfileArticle />,
+        path: "/home/course/:id",
+        main: () => <CourseDetails />,
+        right: () => <CourseSide/>
+    },
+    {
+        path: "/home/course",
+        main: () => <Course />,
         right: () => <span className="w-20"></span>
+
     },
     {
         path: "/home/blog",
@@ -55,9 +56,13 @@ export const sidebarRoutes = [
         right: () => <Rightbar />
     },
     {
+        path: "/home/:id/article",
+        main: () => <ProfileArticle />,
+        right: () => <ProfileSide />
+    },
+    {
         path: "/home/:id",
         main: () => <Profile />,
         right: () => <ProfileSide />
-
     }
 ];

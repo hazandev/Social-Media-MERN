@@ -289,36 +289,91 @@ export const Courses = [
     id: 1,
     photo: "img/product/HTML.jpg",
     mentor: 'Harel Hazan',
-    sale: 85,
     price: 59.99,
+    category: `Web Development`,
+    title: `Build Responsive Real-World Websites with HTML and CSS`,
+    lead: `Learn modern HTML5, CSS3 and web design by building a stunning website for your portfolio! Includes flexbox and CSS Grid`,
+    students: 23200,
+    language: `English`,
+    time: `7.5`,
     tech: 'HTML & CSS',
-    rate: 4.5
+    rate: 4.5,
+    subjects: [
+      `Become a modern and confident HTML and CSS developer, no prior knowledge needed!`,
+      `Modern, semantic and accessible HTML5`,
+      `Important CSS concepts such as the box model, positioning schemes, inheritance, solving selector conflicts, etc.`, `How to plan, sketch, design, build, test, and optimize a professional website`, `How to use common components and layout patterns for professional website design and development`,
+      `How to find and use free design assets such as images, fonts, and icons`,
+      `Design and build a stunning real-world project for your portfolio from scratch`,
+      `Modern CSS (previous CSS3), including flexbox and CSS Grid for layout`,
+      `A web design framework with easy-to-use rules and guidelines to design eye-catching websites`, `How to make websites work on every possible mobile device (responsive design)`, `Developer skills such as reading documentation, debugging, and using professional tools`, `Practice your skills with 10+ challenges (solutions included)`
+    ]
   },
   {
     id: 2,
     photo: "img/product/JS.jpg",
     mentor: 'Harel Hazan',
-    sale: 85,
+    category: `Web Development`,
+    title: `Build Responsive Real-World Websites with Java script`,
+    lead: `Learn modern Java script HTML5, CSS3 and web design by building a stunning website for your portfolio! Includes flexbox and CSS Grid`,
+    students: 23200,
+    language: `English`,
     price: 49.99,
     tech: 'Java script',
-    rate: 4.2
+    rate: 4.2,
+    subjects: [
+      `Become a modern and confident Java scriptdeveloper, no prior knowledge needed!`,
+      `Modern, semantic and accessible HTML5`,
+      `Important CSS concepts such as the box model, positioning schemes, inheritance, solving selector conflicts, etc.`, `How to plan, sketch, design, build, test, and optimize a professional website`, `How to use common components and layout patterns for professional website design and development`,
+      `How to find and use free design assets such as images, fonts, and icons`,
+      `Design and build a stunning real-world project for your portfolio from scratch`,
+      `Modern CSS (previous CSS3), including flexbox and CSS Grid for layout`,
+      `A web design framework with easy-to-use rules and guidelines to design eye-catching websites`, `How to make websites work on every possible mobile device (responsive design)`, `Developer skills such as reading documentation, debugging, and using professional tools`, `Practice your skills with 10+ challenges (solutions included)`
+    ]
   },
   {
     id: 3,
     photo: "img/product/NODEJS.jpg",
     mentor: 'Brad Traversy',
-    sale: 12,
+    category: `Web Development`,
+    title: `Build Node.js Real-World Server with Java script`,
+    lead: `Learn modern Node.js by building a stunning website for your portfolio! Includes flexbox and `,
+    students: 23200,
+    language: `English`,
     price: 59.99,
     tech: 'Node.js',
-    rate: 4.7
+    rate: 4.7,
+    subjects: [
+      `Become a modern and confident HTML and CSS developer, no prior knowledge needed!`,
+      `Modern, semantic and accessible HTML5`,
+      `Important CSS concepts such as the box model, positioning schemes, inheritance, solving selector conflicts, etc.`, `How to plan, sketch, design, build, test, and optimize a professional website`, `How to use common components and layout patterns for professional website design and development`,
+      `How to find and use free design assets such as images, fonts, and icons`,
+      `Design and build a stunning real-world project for your portfolio from scratch`,
+      `Modern CSS (previous CSS3), including flexbox and CSS Grid for layout`,
+      `A web design framework with easy-to-use rules and guidelines to design eye-catching websites`, `How to make websites work on every possible mobile device (responsive design)`, `Developer skills such as reading documentation, debugging, and using professional tools`, `Practice your skills with 10+ challenges (solutions included)`
+    ]
   },
   {
     id: 4,
     photo: "img/product/Redis.jpg",
     mentor: 'Mor Cohen',
-    sale: 31,
+    category: `Web Development`,
+    title: `Build Node.js Real-World Server with Redis`,
+    lead: `Learn modern Node.js by building a stunning website for your portfolio! Includes flexbox and `,
+    students: 23200,
+    language: `English`,
+    price: 59.99,
+    tech: "DB Redis",
     price: 29.99,
-    tech: 'Redis'
+    rate: 4.2,
+    subjects: [
+      `Become a modern and confident HTML and CSS developer, no prior knowledge needed!`,
+      `Modern, semantic and accessible HTML5`,
+      `Important CSS concepts such as the box model, positioning schemes, inheritance, solving selector conflicts, etc.`, `How to plan, sketch, design, build, test, and optimize a professional website`, `How to use common components and layout patterns for professional website design and development`,
+      `How to find and use free design assets such as images, fonts, and icons`,
+      `Design and build a stunning real-world project for your portfolio from scratch`,
+      `Modern CSS (previous CSS3), including flexbox and CSS Grid for layout`,
+      `A web design framework with easy-to-use rules and guidelines to design eye-catching websites`, `How to make websites work on every possible mobile device (responsive design)`, `Developer skills such as reading documentation, debugging, and using professional tools`, `Practice your skills with 10+ challenges (solutions included)`
+    ]
   }
 ]
 

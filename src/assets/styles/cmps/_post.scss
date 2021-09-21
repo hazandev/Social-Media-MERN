@@ -55,6 +55,15 @@
         font-weight: 600;
         .PostBottomIcons{
           cursor: pointer;
+          display: flex;
+          align-items: center;
+          i{
+            .true{
+              color: #ffba03;
+            }
+            .false{
+            }
+          }
         }
         img {
           width: 1.4rem;
