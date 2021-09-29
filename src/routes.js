@@ -58,7 +58,7 @@ export const sidebarRoutes = [
     {
         path: "/home/:id/article",
         main: () => <ProfileArticle />,
-        right: () => <ProfileSide />
+        right: () => <span className="w-20"></span>
     },
     {
         path: "/home/:id",

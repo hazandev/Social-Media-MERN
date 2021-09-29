@@ -5,7 +5,7 @@ export const CourseList = () => {
   return (
     <div className="productList">
       {Courses.map((course) => (
-        <CoursePreview key={course.id} course={course} />
+        <CoursePreview key={course._id} course={course} />
       ))}
     </div>
   );

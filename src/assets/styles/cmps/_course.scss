@@ -2,7 +2,9 @@
   width: 100%;
   .filterCourse {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin: 0 2rem;
+
     .sliderValue {
       margin-inline-start: 2rem;
       font-size: 1.1rem;

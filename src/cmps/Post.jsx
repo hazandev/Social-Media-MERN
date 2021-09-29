@@ -3,6 +3,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Users } from "../data/dummyData";
 import EmojiObjectsOutlinedIcon from "@material-ui/icons/EmojiObjectsOutlined";
+import { useSelector } from "react-redux";
+import DeleteIcon from "@material-ui/icons/Delete";
+import { postService } from "../services/postService";
+
+
 
 export const Post = ({ post }) => {
   const [wise, setWise] = useState(post.wise);
@@ -11,6 +16,12 @@ export const Post = ({ post }) => {
     setWise(isWised ? wise - 1 : wise + 1);
     setIsWised(!isWised);
   };
+  const [toggleMenuPost, setToggleMenuPost] = useState(false);
+  const loggedInUser = useSelector((state) => state.userModule.loggedInUser);
+
+  const deletePost = ()=> {
+    postService.remove(post._id)
+  }
   return (
     <div className="post">
       {post && (
@@ -30,13 +41,25 @@ export const Post = ({ post }) => {
             </Link>
             <div className="postTopRight ">
               <span className="postSubject">{post.tech}</span>
-              <MoreVert />
+              { toggleMenuPost && 
+                  <ul className="menuList">
+                    <li className="delbtn" onClick={()=>{deletePost()}}>
+                    <DeleteIcon/>
+                    </li>
+                  </ul>
+                }
+              {loggedInUser._id === post.userId &&         
+              <div className="menuPost" onClick={()=>{setToggleMenuPost(!toggleMenuPost)}}>
+                <MoreVert />
+              </div>      
+              }
             </div>
           </div>
           <div className="postCenter">
-            <div className="postCenterLeft"></div>
-            <div className="postCenterRight"></div>
-            <span className="postText">{post.text}</span>
+            <div className="postCenterLeft">
+              {post.subject}
+            </div>
+            <span className="postText">{post.content}</span>
             <img src={post.photo} alt="" />
           </div>
           <div className="postBottom">
@@ -46,15 +69,16 @@ export const Post = ({ post }) => {
                   <EmojiObjectsOutlinedIcon className={`${isWised}`}/>
                 </i>
                 <span className="postWiseCounter" onClick={() => wiseHandler()}>
-                  {wise} Wise
+                  {wise > 0 ? `${wise}` : ``} Wise
                 </span>
               </div>
             </div>
             <div className="postBottomRight">
+                {post.comment > 0 && 
               <span className="postCommentText">
-                {" "}
                 <span className="bold">{post.comment}</span> comments
               </span>
+                }
             </div>
           </div>
         </div>

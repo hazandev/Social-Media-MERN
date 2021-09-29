@@ -14,7 +14,7 @@ export const Home = () => {
       <div className="container">
         <Sidebar />
         {searchText.length === 0 ? 
-          <div className="animate__animated animate__fadeInLeft animate__faster centerContent">
+          <div className="centerContent">
             <Switch>
               {sidebarRoutes.map((route, index) => (
                 <Route

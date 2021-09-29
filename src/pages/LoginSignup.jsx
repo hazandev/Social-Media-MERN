@@ -23,7 +23,7 @@ export const LoginSignup = () => {
         Dev<span>N</span>et
         <p className="lead">{`Web Developer   Community`} </p>
       </div>
-      <div className="loginSignupWrapper">
+      <div className="loginSignupWrapper animate__animated animate__fadeIn ">
         <div className="leftLogin"></div>
         <div className="rightLogin">
           <div className="loginSignupForm">

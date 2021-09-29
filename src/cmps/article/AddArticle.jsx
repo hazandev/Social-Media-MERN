@@ -2,10 +2,12 @@ import { useSelector } from "react-redux";
 import TextField from "@material-ui/core/TextField";
 import { techOption } from "../../data/dummyData";
 import { useState } from "react";
-import { Publish } from "@material-ui/icons";
 import { blogService } from "../../services/blogService";
+import { useHistory } from "react-router";
+
 
 export const AddArticle = () => {
+  const history = useHistory();
   const loggedInUser = useSelector((state) => state.userModule.loggedInUser);
   const [tech, setTech] = useState("React");
   const [subject, setSubject] = useState("");
@@ -26,9 +28,9 @@ export const AddArticle = () => {
     setEndArticle(event.target.value);
   };
 
-  const publishArticle = () => {
+  const publishArticle = async () => {
     const article = {
-        userId : loggedInUser.id,
+        userId : loggedInUser._id,
         tech : tech,
         subject: subject,
         content: {
@@ -37,7 +39,8 @@ export const AddArticle = () => {
             end: endArticle
         }
     }
-    blogService.add(article);
+    await blogService.add(article);
+    history.push(`/home/blog`)
   };
   return (
     <div className="addArticle">

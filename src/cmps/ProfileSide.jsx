@@ -1,20 +1,34 @@
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import { Users } from "../data/dummyData";
 import { AvatarFriend } from "./AvatarFriend";
-import { Articles } from "../data/dummyData";
+import { userService } from "../services/userService";
+
 export const ProfileSide = () => {
-  const [user, setUser] = useState(null);
   const { id } = useParams();
-  useEffect(() => {
-    setUser(Users[id - 1]);
+  const [user, setUser] = useState(null);
+  const [friendsPicture, setFriendsPicture] = useState(null);
+  //api get user post
+  useEffect(async () => {
+    setUser(await userService.getById(id));
   }, []);
+
+  useEffect(async () => {
+    const friendsUser = [];
+    if (user) {
+      user.friendsID.forEach( async (id) => {
+        const friend = await userService.getById(id);
+        friendsUser.push(friend.profilePicture);
+      });
+      setFriendsPicture(friendsUser);
+      console.log(friendsPicture);
+    }
+  }, [user]);
 
   return (
     <div className="rightbar profileSide">
-      {user && (
+      {(user && friendsPicture) && (
         <div className="profileSideWrapper">
           <div className="profileLink">
             <a target="_blank" href={user.linkedin}>
@@ -38,18 +52,21 @@ export const ProfileSide = () => {
               <p>{user.mail}</p>
             </li>
           </ul>
-          {user && (
+          {friendsPicture && (
             <div className="infoSideFriends">
               <h4>Friends</h4>
               <ul className="friendsList">
-                {user.friendsID.map((id) => {
-                  return <AvatarFriend key={id} friend={Users[id - 1]} />;
-                })}
+                {friendsPicture.map((pictureUrl, index) => (
+                  <AvatarFriend key={index} profilePicture={pictureUrl} />
+                ))}
               </ul>
             </div>
           )}
           {user && (
-            <Link className="listArticleProfile" to={`/home/${user.id}/article`}>
+            <Link
+              className="listArticleProfile"
+              to={`/home/${user._id}/article`}
+            >
               <h4>Click To Articles</h4>
             </Link>
           )}

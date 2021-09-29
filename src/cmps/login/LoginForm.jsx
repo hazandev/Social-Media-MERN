@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { login } from "../../store/actions/userActions";
 import { userService } from "../../services/userService";
 import { useForm } from "../../services/generalService/customHooks";
 
 export const LoginForm = () => {
   const [msg, setMsg] = useState("");
-  const toggleLogin = useSelector((state) => state.toggleLogin);
   const dispatch = useDispatch();
 
   const [credLogin, handleChangeLogin, setCredLogin] = useForm(
@@ -30,7 +29,7 @@ export const LoginForm = () => {
           <input
             type="text"
             name="mail"
-            value={credLogin.mail}
+            value={credLogin.mail || ''}
             onChange={handleChangeLogin}
             placeholder="mail"
             autoComplete="mail"
@@ -38,7 +37,7 @@ export const LoginForm = () => {
           <input
             name="password"
             type="password"
-            value={credLogin.password}
+            value={credLogin.password || ''}
             onChange={handleChangeLogin}
             placeholder="Password"
             autoComplete="current-password"

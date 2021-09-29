@@ -12,8 +12,7 @@
       height: 6rem;
 
       border-radius: 3px;
-      border-top-left-radius: 22px;
-      border-bottom-right-radius: 22px;
+      clip-path: polygon(0% 15%, 0 0, 15% 0%, 100% 0%, 100% 16%, 100% 15%, 100% 85%, 84% 100%, 85% 100%, 15% 100%, 0 100%, 0% 85%);
       margin: 8px 0;
     }
   }

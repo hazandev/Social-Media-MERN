@@ -4,15 +4,15 @@ import { useState, useEffect } from "react";
 import { techOption } from "../data/dummyData";
 import { ArticlePreview } from "./article/ArticlePreview";
 import { blogService } from "../services/blogService";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 
 export const Blog = ({ userId = null }) => {
-  const classes = useStyles();
   const [tech, setTech] = useState("All");
   const [search, setSearch] = useState("");
   const filterArticle = blogService.query(search, tech);
   const [articles, setArticles] = useState(filterArticle);
+  let history = useHistory();
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
@@ -22,17 +22,23 @@ export const Blog = ({ userId = null }) => {
     setTech(event.target.value);
   };
 
+  const removeArticle = id => {
+    blogService.remove(id);
+    setArticles(blogService.query(search, tech))
+    };
+
   useEffect(() => {
     const filterArticle = blogService.query(search, tech);
     setArticles(filterArticle);
+
   }, [search, tech]);
 
   return (
-    <div className="blog">
+    <div className="blog animate__animated animate__fadeInLeft animate__faster">
       <div className="blogWrapper">
         <div className="blogTop">
           <div className="searchArticle">
-            <form className={classes.search} noValidate autoComplete="off">
+            <form className={""} noValidate autoComplete="off">
               <TextField
                 id="standard-search"
                 label="Search Article"
@@ -41,7 +47,7 @@ export const Blog = ({ userId = null }) => {
                 type="search"
               />
             </form>
-            <form className={classes.select} noValidate autoComplete="off">
+            <form className={""} noValidate autoComplete="off">
               <TextField
                 id="select tech"
                 select
@@ -65,31 +71,16 @@ export const Blog = ({ userId = null }) => {
         <div className="listArticle">
           {articles &&
             !userId &&
-            articles.map((article) => <ArticlePreview article={article} />)}
+            articles.map((article) => <ArticlePreview article={article} key={article._id}  removeArticle={removeArticle}/>)}
           {articles &&
             userId &&
             articles.map((article) => {
               if (article.userId == userId)
-                return <ArticlePreview article={article} />;
+                return <ArticlePreview article={article} key={article._id} removeArticle={removeArticle}/>
+                
             })}
         </div>
       </div>
     </div>
   );
 };
-
-const useStyles = makeStyles((theme) => ({
-  search: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "30rem",
-      padding: "0 3rem 0 0",
-    },
-  },
-  select: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "10rem",
-    },
-  },
-}));

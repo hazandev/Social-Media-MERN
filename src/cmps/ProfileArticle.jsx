@@ -1,14 +1,15 @@
 import { Users } from "../data/dummyData";
-import { AvatarFriend } from "./AvatarFriend";
-import { Articles } from "../data/dummyData";
 import { useState, useEffect } from "react";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Blog } from "./Blog";
+import { userService } from "../services/userService";
+
 export const ProfileArticle = () => {
   const [user, setUser] = useState(null);
   const { id } = useParams();
-  useEffect(() => {
-    setUser(Users[id - 1]);
+  useEffect(async () => {
+    setUser(await userService.getById(id));
   }, []);
-  return <div>{user && <Blog userId={user.id} />}</div>;
+  
+  return <div>{user && <Blog userId={user._id} />}</div>;
 };

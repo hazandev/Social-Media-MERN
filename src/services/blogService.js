@@ -1,22 +1,38 @@
-import { Articles } from "../data/dummyData"
+import { storageService } from "./generalService/asyncStorageService";
+
 export const blogService = {
     query,
     add,
-    remove
+    remove,
+    getById,
+    getCommentsById,
+    addComment
 }
 
-let gArticles = Articles;
+function addComment(comment){
+    return storageService.post('commentsArticle', comment);
+}
+
+function getById(articleId) {
+    return storageService.get('articles', articleId)
+}
 
 
 function query(filter = '', tech = "") {
-    const filterString = filter.toUpperCase();
-    let filterArticles = [];
+    const articles = storageService.getEntity('articles');
+    const filterArticles = _filterQuery(articles, filter, tech)
+    return filterArticles;
 
-    gArticles.forEach(article => {
+}
+
+function _filterQuery(articles, filter, tech) {
+    let filterArticles = [];
+    const filterString = filter.toUpperCase();
+    articles.forEach(article => {
         if (
             article.subject.toUpperCase().includes(filterString) ||
-            article.content.pre.toUpperCase().includes(filterString)||
-            article.content.body.toUpperCase().includes(filterString)||
+            article.content.pre.toUpperCase().includes(filterString) ||
+            article.content.body.toUpperCase().includes(filterString) ||
             article.content.end.toUpperCase().includes(filterString)
         )
 
@@ -31,16 +47,18 @@ function query(filter = '', tech = "") {
     return filterArticles;
 }
 
-function add(article) {
-    //server
-    //do dispatch
-    debugger
-    article.id = gArticles.length + 1;
-    gArticles.push(article);
-    Articles = gArticles;
+async function add (article) {
+    const addedArticle = await storageService.post('articles', article);
 }
 
-function remove(id) {
-    gArticles = gArticles.filter(article => article.id !== id);
-    debugger
+function remove(articleId) {
+    return storageService.remove('articles', articleId)
+
+}
+
+function getCommentsById(articleId) {
+    return storageService.query('commentsArticle').then(comments => {
+        return comments.filter(comment => comment.articleId == articleId)
+    })
+
 }

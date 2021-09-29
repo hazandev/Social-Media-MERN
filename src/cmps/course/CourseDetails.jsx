@@ -2,28 +2,16 @@ import { useParams } from "react-router-dom";
 import { courseService } from "../../services/courseService";
 import DoneIcon from "@material-ui/icons/Done";
 import Rating from "@mui/material/Rating";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LanguageIcon from "@material-ui/icons/Language";
 
 export const CourseDetails = () => {
+  const [course, setCourse] = useState(null);
   const { id } = useParams();
 
-  const course = courseService.getById(id);
-  const {
-    photo,
-    mentor,
-    price,
-    category,
-    title,
-    lead,
-    students,
-    language,
-    subjects,
-    time,
-    tech,
-    rate,
-  } = course;
-  const [rating, setRating] = useState(rate);
+  useEffect(async () => {
+    setCourse(await courseService.getById(id));
+  }, []);
 
   return (
     <div className="courseDetails">
@@ -32,31 +20,31 @@ export const CourseDetails = () => {
           <div className="cardTop flex column">
             <div className="topDetails flex column">
               <div className="content">
-                <label>{`${category} > ${tech}`}</label>
-                <h2>{title}</h2>
-                <h6>{lead}</h6>
+                <label>{`${course.category} > ${course.tech}`}</label>
+                <h2>{course.title}</h2>
+                <h6>{course.lead}</h6>
               </div>
             </div>
             <div className="centerDetails flex center">
               <p>
                 <Rating
                   name="half-rating-read"
-                  defaultValue={rating}
+                  defaultValue={course.rate}
                   precision={0.5}
                   readOnly
                 />
               </p>
-              <p>{students} Students</p>
+              <p>{course.students} Students</p>
               <p className="flex center">
-                <LanguageIcon /> <span className="ps-s">{language}</span>
+                <LanguageIcon /> <span className="ps-s">{course.language}</span>
               </p>
-              <p>Created by: {mentor}</p>
+              <p>Created by: {course.mentor}</p>
             </div>
             <div className="bottomCard">
               <h4>What you'll learn</h4>
               <ul className="subjectsCourse">
-                {subjects.map((subject) => (
-                  <li>
+                {course.subjects.map((subject, index) => (
+                  <li key={index}>
                     <span>
                       <DoneIcon />
                     </span>{" "}

@@ -122,7 +122,6 @@
       }
     }
     .topbar {
-      height: 7vh;
       padding-top: 4px;
       .topbar-right {
         .topbar-icons {
@@ -132,6 +131,7 @@
     }
     .sidebar {
       flex: 1;
+      max-width: 12rem;
     }
     .feed {
       flex: 8;
@@ -151,7 +151,15 @@
     }
     .rightbar {
       // display: none;
-      flex: 2;
+      .productList{
+        width: 10rem;
+        .productTop{
+          img{
+            width: 100%;
+          }
+        }
+      }
+
     }
 
     .share {

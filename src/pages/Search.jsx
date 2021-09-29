@@ -1,11 +1,7 @@
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
-
 import { useState } from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import FolderIcon from "@material-ui/icons/Folder";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import DescriptionIcon from "@material-ui/icons/Description";
 import SchoolIcon from "@material-ui/icons/School";
@@ -21,12 +17,6 @@ export const Search = () => {
     setCategory(newValue);
   };
 
-  useEffect(() => {
-    console.log(searchText);
-    return () => {
-      console.log(searchText);
-    };
-  }, []);
 
   return (
     <div className="search animate__animated animate__fadeInLeft animate__faster">

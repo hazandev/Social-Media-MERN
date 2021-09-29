@@ -1,6 +1,6 @@
 .post {
-  width: 95%;
-  align-self: end;
+  width: 100%;
+  margin: 0 auto;
   .postWrapper {
     .postTop {
       display: flex;
@@ -27,13 +27,37 @@
           font-size: 0.85rem;
           border-bottom: 3px solid #ffcd4c;
         }
+        .menuPost {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          flex-direction: row-reverse;
+          &:hover{
+            color: $primeColor;
+          }
+        }
+        .menuList{
+          position: relative;
+          .delbtn{
+            cursor: pointer;
+            color: #333;
+            &:hover{
+                color: rgb(246, 64, 64);
+              }
+          }
+        }
       }
     }
     .postCenter {
       display: flex;
       flex-direction: column;
-      .postText{
-        padding: 12px 0 8px 0;
+      .postCenterLeft{
+        margin-top: 12px;
+        font-weight: 600;
+        color: $primeColor;
+      }
+      .postText {
+        padding: 8px 0 8px 0;
         line-height: 1.4rem;
       }
       img {
@@ -53,15 +77,15 @@
         justify-content: space-between;
         width: 25%;
         font-weight: 600;
-        .PostBottomIcons{
+        .PostBottomIcons {
           cursor: pointer;
           display: flex;
           align-items: center;
-          i{
-            .true{
+          i {
+            .true {
               color: #ffba03;
             }
-            .false{
+            .false {
             }
           }
         }

@@ -1,52 +1,55 @@
-import React from "react";
-import { Users } from "../../data/dummyData";
+import { useState, useEffect } from "react";
 import VisibilityIcon from "@material-ui/icons/Visibility";
-import { Link, useHistory } from "react-router-dom";
-import { blogService } from "../../services/blogService";
+import { Link } from "react-router-dom";
+
+import { userService } from "../../services/userService";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useSelector } from "react-redux";
 
-export const ArticlePreview = ({ article }) => {
-  let history = useHistory();
-  const user = Users[article.userId - 1];
+export const ArticlePreview = ({ article, removeArticle }) => {
+  const [user, setUser] = useState(null);
   const loggedInUser = useSelector((state) => state.userModule.loggedInUser);
 
-  const removeArticle = (id) => {
-    blogService.remove(id);
-    history.push(`/home/blog`);
-  };
+
+  useEffect(async () => {
+    setUser(await userService.getById(article.userId));
+  }, []);
+
+
 
   return (
-    <Link className="articlePreview articleSearch" to={`/home/blog/${article.id}`}>
-      <div className="leftCardArticle">
-        <img src={user.profilePicture} />
-        <p>{user.username}</p>
-      </div>
-      <div className="rightCardArticle">
-        <p className="subjectArticle">
-          {article.subject}
-          <span>{article.tech}</span>
-        </p>
-        <div className="bottomCard">
-          <div className="leftBottomCard">
-            <p className="viewArticle">
-              {article.view} <span>Views</span>
-            </p>
-            <p className="dateArticle">{article.date}</p>
-          </div>
-          <div className="rightBottomCard">
-            {loggedInUser.id === article.userId && (
-              <DeleteIcon
-                className="delIcon"
-                onClick={() => {
-                  removeArticle(article.id);
-                }}
-              />
-            )}
-            <VisibilityIcon className="eyesIcon" />
+    <div>
+      {user && (
+        <div className="articlePreviewWrapper articlePreview articleSearch">
+          <Link to={`/home/blog/${article._id}`} className="leftCardArticle">
+            <img src={user.profilePicture} />
+            <p>{user.username}</p>
+          </Link>
+          <div className="rightCardArticle">
+            <Link to={`/home/blog/${article._id}`} className="subjectArticle">
+              {article.subject}
+              <span>{article.tech}</span>
+            </Link>
+            <div className="bottomCard">
+              <Link to={`/home/blog/${article._id}`} className="leftBottomCard">
+                <p className="viewArticle">
+                  {article.view} <span>Views</span>
+                </p>
+                <p className="dateArticle">{article.date}</p>
+              </Link>
+              <div className="rightBottomCard">
+                {loggedInUser._id === article.userId && (
+                  <DeleteIcon
+                    className="delIcon"
+                    onClick={() => {removeArticle(article._id)}}
+                  />
+                )}
+                <VisibilityIcon className="eyesIcon" />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </Link>
+      )}
+    </div>
   );
 };

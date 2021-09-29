@@ -23,7 +23,7 @@ export const SearchList = ({ category, listSearch }) => {
             className="itemSearch"
             onClick={() => {
               clearSearch();
-              history.push(`/home/${el.id}`);
+              history.push(`/home/${el._id}`);
 
             }}
           >
@@ -42,12 +42,12 @@ export const SearchList = ({ category, listSearch }) => {
           </div>
         ))}
       {category === "Courses" &&
-        listSearch.map((el) => (
+        listSearch.map((el, index) => (
           <div
             className="itemSearch"
             onClick={() => {
               clearSearch();
-            }}
+            }} key={index}
           >
             <CoursePreview course={el} />
           </div>

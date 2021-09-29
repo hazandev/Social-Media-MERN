@@ -35,12 +35,17 @@ export function login(userCreds) {
     try {
       // const user = await userService.login(userCreds)
       const user = {
-        id: 1,
-        profilePicture: 'img/person/1.jpeg',
-        username: "Safak Kocaoglu",
-        bio: 'Node developer',
+        _id: 11,
+        profilePicture: 'img/person/11.jpeg',
+        username: "Harel Hazan",
+        bio: 'React & Node.js developer',
         password: "123456",
-        mail: "Safak@gmail.com"
+        mail: "Harel@gmail.com",
+        online: true,
+        friendsID: [2, 4, 6, 7, 8, 9],
+        git: 'https://github.com/hazandev',
+        linkedin: `https://www.linkedin.com/in/idan-harel-hazan-7472401b3/`,
+        city: 'Tel Aviv'
       }
       dispatch({ type: 'SET_USER', user })
     } catch (err) {

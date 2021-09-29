@@ -1,34 +1,32 @@
 import { Post } from "../cmps/Post";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Posts, Users } from "../data/dummyData";
+import { postService } from "../services/postService";
+import { userService } from "../services/userService";
 import { Share } from "./Share";
 import { useSelector } from "react-redux";
 
 export const Profile = () => {
-  const [posts, setPosts] = useState(null);
-  const [user, setUser] = useState(null);
-  // const [idUser, setIdUser] = useState(null)
   const { id } = useParams();
+  const [user, setUser] = useState(null);
+  const [posts, setPosts] = useState(null);
   const loggedInUser = useSelector((state) => state.userModule.loggedInUser);
-  
+
   //api get user post
-  useEffect(() => {
-    setPosts(Posts);
-    setUser(Users[id - 1]);
+  useEffect(async () => {
+    setUser(await userService.getById(id));
   }, []);
-  
-  // //bug
-  // useEffect(() => {
-  //   debugger
-  //   console.log(id);
-  //   setIdUser(id)
-  //   setPosts(Posts);
-  //   setUser(Users[id - 1]);
-  // }, [idUser]);
+
+  useEffect(async () => {
+    if (user) {
+      setPosts(await postService.getPostByUser(user._id));
+    }
+    console.log(user, posts);
+  }, [user]);
+
 
   return (
-    <div className="profile">
+    <div className="profile animate__animated animate__fadeInUp">
       {user && (
         <div className="profileRight">
           <div className="profileRightTop">
@@ -36,12 +34,12 @@ export const Profile = () => {
               <div className="profileCover">
                 <img
                   className="profileCoverImg"
-                  src={`img/post/${user.id}.jpeg`}
+                  src={`img/post/${user._id}.jpeg`}
                   alt=""
                 />
                 <img
                   className="profileUserImg"
-                  src={`img/person/${user.id}.jpeg`}
+                  src={`img/person/${user._id}.jpeg`}
                   alt=""
                 />
                 <div className="profileInfo">
@@ -51,7 +49,7 @@ export const Profile = () => {
               </div>
             </div>
           </div>
-          {loggedInUser.id == id && (
+          {loggedInUser._id == id && (
             <div className="shareProfile">
               <Share />
             </div>
@@ -59,9 +57,9 @@ export const Profile = () => {
           <div className="profilePosts">
             {posts &&
               posts
-                .filter((post) => post.userId === user.id)
+                .filter((post) => post.userId === user._id)
                 .map((post) => {
-                  return <Post key={post.id} post={post} />;
+                  return <Post key={post._id} post={post} />;
                 })}
           </div>
         </div>

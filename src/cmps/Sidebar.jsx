@@ -9,8 +9,8 @@ import { editSearch } from "../store/actions/uiActions";
 export const Sidebar = () => {
   const dispatch = useDispatch();
   const searchText = useSelector((state) => state.uiModule.searchText);
-  const handleChangeSearch = (event) => {
-    const searchText = event.target.value;
+  const handleChangeSearch = (ev) => {
+    const searchText = ev.target.value;
     dispatch({ type: 'EDIT_SEARCH', searchText })
   };
   return (
@@ -23,8 +23,7 @@ export const Sidebar = () => {
               <input
                 className="sidebarSearch"
                 placeholder="Search..."
-                defaultValue={searchText}
-                value={searchText}
+                value={searchText || ''}
                 onChange={handleChangeSearch}
               />
             </li>
@@ -57,7 +56,7 @@ export const Sidebar = () => {
             <hr className="sidebarHr" />
             <ul className="sidebarFriendList">
               {Users.map((user) => (
-                <Avatar key={user.id} user={user} />
+                <Avatar key={user._id} user={user} />
               ))}
             </ul>
           </div>

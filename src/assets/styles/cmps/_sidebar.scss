@@ -1,7 +1,7 @@
 .sidebar {
   background: $primeColor;
   border-top-right-radius: 4px;
-  height: 93vh;
+  height: calc(100vh - 40px);
   width: 11rem;
   z-index: 2;
   .sidebarWrapper {
