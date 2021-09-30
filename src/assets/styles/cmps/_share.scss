@@ -1,103 +1,105 @@
 .share {
-  width: 98%;
-  min-height: 9rem;
-  height: auto;
-  border: 1px solid #9f9f9f;
-  box-shadow: 1px 0.2px 1.3px;
-  border-radius: 4px;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-
-  .shareWrapper {
-    .shareTop {
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: center;
-      width: 100%;
-      background: #fff;
-      min-height: 5rem;
-      .shareHeader {
-        display: flex;
-        align-items: center;
-        .shareHeaderInput {
-          margin: 0.5rem 0.6rem 0.7rem 0;
-          width: 4rem;
-          font-size: 0.8rem;
-          color: $primeColor;
-          font-weight: 600;
-          &:focus {
-            outline: none;
-            border: none;
-            border-bottom: 1px solid #000;
-          }
-        }
-      }
-      .shareHeaderText {
-        font-size: 1.3rem;
-        color: #333;
-        margin: 0 10px 12px 0;
-        font-weight: 600;
-      }
-      .sahreImgProfile {
-        margin-bottom: 0.7rem;
-      }
-      .shareContent {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+    width: 98%;
+    min-height: 9rem;
+    height: auto;
+    border: 1px solid #9f9f9f;
+    box-shadow: 1px 0.2px 1.3px;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    .shareWrapper {
         input {
-          &::placeholder{
-            font-size: 1rem;
-          }
-          &:focus {
-            border: none;
-            border-bottom: 1px solid $primeColor;
-            outline: none;
-          }
+            background: inherit;
         }
-        .shareSubjectInput {
-          width: 30%;
-          margin-bottom: 0.8rem;
+        .shareTop {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+            min-height: 5rem;
+            .shareHeader {
+                display: flex;
+                align-items: center;
+                .shareHeaderInput {
+                    margin: 0.5rem 0.6rem 0.7rem 0;
+                    width: 4rem;
+                    font-size: 0.8rem;
+                    color: $primeColor;
+                    font-weight: 600;
+                    &:focus {
+                        outline: none;
+                        border: none;
+                        border-bottom: 1px solid #000;
+                    }
+                }
+            }
+            .shareHeaderText {
+                font-size: 1.3rem;
+                color: #333;
+                margin: 0 10px 12px 0;
+                font-weight: 600;
+            }
+            .sahreImgProfile {
+                margin-bottom: 0.7rem;
+            }
+            .shareContent {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                input {
+                    &::placeholder {
+                        font-size: 1rem;
+                    }
+                    &:focus {
+                        border: none;
+                        border-bottom: 1px solid $primeColor;
+                        outline: none;
+                    }
+                }
+                .shareSubjectInput {
+                    width: 30%;
+                    margin-bottom: 0.8rem;
+                }
+                .shareContentInput {
+                    margin-bottom: 0.8rem;
+                }
+            }
         }
-        .shareContentInput {
-          margin-bottom: 0.8rem;
+        .shareBottom {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            .shareOptions {
+                display: flex;
+                width: 70%;
+                .shareOption {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    padding-inline-end: 0.8rem;
+                    .shareIcon {
+                        margin-inline-end: 0.4rem;
+                    }
+                }
+            }
+            .postBtn {
+                padding: 0.2rem 0.5rem;
+                border: 1px solid $primeColor;
+                font-size: 1rem;
+                &:hover {
+                    background-color: $primeColor;
+                    color: #fff;
+                }
+            }
         }
-      }
     }
-    .shareBottom {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      .shareOptions {
-        display: flex;
-        width: 70%;
-        .shareOption {
-          display: flex;
-          align-items: center;
-          cursor: pointer;
-          padding-inline-end: 0.8rem;
-          .shareIcon {
-            margin-inline-end: 0.4rem;
-          }
-        }
-      }
-      .postBtn {
-        padding: 0.2rem 0.5rem;
-        border: 1px solid $primeColor;
-        font-size: 1rem;
-        &:hover {
-          background-color: $primeColor;
-          color: #fff;
-        }
-      }
-    }
-  }
 }
+
 .sahreImgProfile {
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 0.7rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.7rem;
 }

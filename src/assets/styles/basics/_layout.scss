@@ -1,30 +1,33 @@
 .app {
-  height: 100vh;
-  overflow-y: hidden;
-  .container {
-    display: flex;
-    width: 100%;
-    overflow-y: none;
-    justify-content: space-between;
-    .centerContent {
-      width: 70%;
-      max-width: 60rem;
+    height: 100vh;
+    overflow-y: hidden;
+    .containerWrapper {}
+    .modal {
+        z-index: 2;
+        background: rgba(131, 131, 131, 0.603);
     }
-  }
-  .topbar {
-    display: flex;
-    height: 40px;
-  }
-  .home {
-    display: flex;
-    flex-direction: column;
-  }
-  .profile {
-  }
-
-  .question {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+    .container {
+        display: flex;
+        width: 100%;
+        overflow-y: none;
+        justify-content: space-between;
+        .centerContent {
+            width: 70%;
+            max-width: 60rem;
+        }
+    }
+    .topbar {
+        display: flex;
+        height: 40px;
+    }
+    .home {
+        display: flex;
+        flex-direction: column;
+    }
+    .profile {}
+    .question {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }

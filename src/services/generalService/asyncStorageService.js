@@ -1,4 +1,3 @@
-
 export const storageService = {
     query,
     get,
@@ -10,13 +9,14 @@ export const storageService = {
     getEntity
 }
 
-function getEntity(entityType){
+function getEntity(entityType) {
     var entities = JSON.parse(localStorage.getItem(entityType));
+
     return entities
 }
 
 function deleteStorage() {
-  localStorage.clear();
+    localStorage.clear();
 }
 
 function newEntity(entityType, entityArr) {

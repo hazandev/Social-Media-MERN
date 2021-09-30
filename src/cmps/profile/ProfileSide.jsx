@@ -2,33 +2,42 @@ import { useParams, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import { AvatarFriend } from "./AvatarFriend";
-import { userService } from "../services/userService";
+import { AvatarFriend } from "../AvatarFriend";
+import { userService } from "../../services/userService";
 
 export const ProfileSide = () => {
   const { id } = useParams();
   const [user, setUser] = useState(null);
   const [friendsPicture, setFriendsPicture] = useState(null);
   //api get user post
-  useEffect(async () => {
-    setUser(await userService.getById(id));
+  useEffect(() => {
+    async function fetchUser() {
+      setUser(await userService.getById(id));
+    }
+
+    async function fetchFriends() {
+      const friendsUser = [];
+      if (user) {
+        user.friendsID.forEach(async (id) => {
+          const friend = await userService.getById(id);
+          friendsUser.push(friend.profilePicture);
+        });
+        setFriendsPicture(friendsUser);
+      }
+    }
+
+    async function fetchData() {
+      await fetchUser();
+      await fetchFriends();
+    }
+
+    fetchData();
   }, []);
 
-  useEffect(async () => {
-    const friendsUser = [];
-    if (user) {
-      user.friendsID.forEach( async (id) => {
-        const friend = await userService.getById(id);
-        friendsUser.push(friend.profilePicture);
-      });
-      setFriendsPicture(friendsUser);
-      console.log(friendsPicture);
-    }
-  }, [user]);
 
   return (
     <div className="rightbar profileSide">
-      {(user && friendsPicture) && (
+      {user && 
         <div className="profileSideWrapper">
           <div className="profileLink">
             <a target="_blank" href={user.linkedin}>
@@ -71,7 +80,7 @@ export const ProfileSide = () => {
             </Link>
           )}
         </div>
-      )}
+      }
     </div>
   );
 };

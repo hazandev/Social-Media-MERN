@@ -27,6 +27,5 @@ function query(filter = '', value = [0, Infinity]) {
     filterCourse.sort((function (a, b) {
         return b.price - a.price;
     }));
-    console.log(filterCourse);
     return filterCourse;
 }

@@ -1,16 +1,25 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import { utilService } from "../services/generalService/utilService";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { userService } from "../services/userService";
+import MenuIcon from "@mui/icons-material/Menu";
+
 export const Topbar = () => {
   const loggedInUser = useSelector((state) => state.userModule.loggedInUser);
-  const [smallScreen, setSmallScreen] = useState(true);
-  useEffect(() => {
-    const sizeScreen = utilService.getWindowDimensions();
-  }, []);
+
+  const dispatch = useDispatch();
+
+  const stateHamburger = useSelector((state) => state.uiModule.toggleMenuPhone);
+
+
+  const toggleHamburger = () => {
+    dispatch({ type: 'TOGGLE_MENU_PHONE', stateHamburger })
+    console.log(stateHamburger);
+  };
+
   const doLogout = () => {
     console.log("logout");
   };
@@ -47,6 +56,11 @@ export const Topbar = () => {
           )}
         </div>
       )}
+      <div className="topbar-right hamburgerMenu" onClick={() => {
+        toggleHamburger();
+      }}>
+        <MenuIcon />
+      </div>
     </div>
   );
 };

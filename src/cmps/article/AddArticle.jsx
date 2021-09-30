@@ -56,7 +56,7 @@ export const AddArticle = () => {
                 readOnly: true,
               }}
             />
-            <div className="ps-4">
+            <div className="ps-4 selectTech">
               <TextField
                 id="selectTech"
                 select

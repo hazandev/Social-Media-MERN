@@ -15,9 +15,9 @@ export const userService = {
 }
 
 window.userService = userService
-// Note: due to async, must run one by one...
-// userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 100, isAdmin: false})
-// userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 100, isAdmin: true})
+    // Note: due to async, must run one by one...
+    // userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 100, isAdmin: false})
+    // userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 100, isAdmin: true})
 
 function getEmptySignup() {
     return {
@@ -28,6 +28,7 @@ function getEmptySignup() {
         mail: ''
     }
 }
+
 function getEmptyLogin() {
     return {
         mail: '',
@@ -42,8 +43,9 @@ function getUsers() {
 
 function getById(userId) {
     return storageService.get('user', userId)
-    // return httpService.get(`user/${userId}`)
+        // return httpService.get(`user/${userId}`)
 }
+
 function remove(userId) {
     // return storageService.remove('user', userId)
     return httpService.delete(`user/${userId}`)
@@ -52,7 +54,7 @@ function remove(userId) {
 async function update(user) {
     // return storageService.put('user', user)
     user = await httpService.put(`user/${user._id}`, user)
-    // Handle case in which admin updates other user's details
+        // Handle case in which admin updates other user's details
     if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
 }
 
@@ -99,6 +101,7 @@ async function logout() {
     // sessionStorage.clear()
     // return await httpService.post('auth/logout')
 }
+
 function _saveLocalUser(user) {
     sessionStorage.setItem('loggedinUser', JSON.stringify(user))
     return user
@@ -107,4 +110,3 @@ function _saveLocalUser(user) {
 function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem('loggedinUser'))
 }
-

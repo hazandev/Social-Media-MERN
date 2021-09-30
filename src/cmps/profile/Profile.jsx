@@ -1,9 +1,9 @@
-import { Post } from "../cmps/Post";
+import { Post } from "../Post";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { postService } from "../services/postService";
-import { userService } from "../services/userService";
-import { Share } from "./Share";
+import { postService } from "../../services/postService";
+import { userService } from "../../services/userService";
+import { Share } from "../Share";
 import { useSelector } from "react-redux";
 
 export const Profile = () => {
@@ -13,17 +13,21 @@ export const Profile = () => {
   const loggedInUser = useSelector((state) => state.userModule.loggedInUser);
 
   //api get user post
-  useEffect(async () => {
-    setUser(await userService.getById(id));
+  useEffect(() => {
+    async function fetchData(){
+      setUser(await userService.getById(id));
+    }
+    fetchData();
   }, []);
 
-  useEffect(async () => {
-    if (user) {
-      setPosts(await postService.getPostByUser(user._id));
+  useEffect(() => {
+    async function fetchData() {
+      if (user) {
+        setPosts(await postService.getPostByUser(user._id));
+      }
     }
-    console.log(user, posts);
+    fetchData();
   }, [user]);
-
 
   return (
     <div className="profile animate__animated animate__fadeInUp">

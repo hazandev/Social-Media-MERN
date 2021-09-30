@@ -2,65 +2,65 @@
     height: 93vh;
     overflow-y: auto;
     margin-inline-start: 2rem;
-  .cardWrapper {
-    width: 100%;
-    border-radius: 4px;
-    .cardTop {
-      .topDetails {
-        background-color: $primeColor;
-        clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0 100%, 0 91%);
-        height: 12rem;
-        .content {
-          padding: 1rem;
-          label {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #ffba03;
-          }
-          h2 {
-            font-size: 2rem;
-            font-weight: 600;
+    .cardWrapper {
+        width: 100%;
+        border-radius: 4px;
+        .cardTop {
+            .topDetails {
+                background-color: #333;
+                clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0 100%, 0 91%);
+                height: 12rem;
+                .content {
+                    padding: 1rem;
+                    label {
+                        font-size: 1rem;
+                        font-weight: 400;
+                        color: #ffba03;
+                    }
+                    h2 {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        color: #fff;
+                        margin: 1rem 0 1rem 0;
+                    }
+                    h6 {
+                        color: #fff;
+                    }
+                }
+            }
+            .centerDetails {
+                border: 2px solid $primeColor;
+                flex-wrap: wrap;
+                height: 3rem;
+                p {
+                    padding-inline-start: 2rem;
+                }
+            }
+        }
+        .bottomCard {
             color: #fff;
-            margin: 1rem 0 1rem 0;
-          }
-          h6 {
-            color: #fff;
-          }
-        }
-      }
-      .centerDetails {
-        border: 2px solid $primeColor;
-        flex-wrap: wrap;
-        height: 3rem;
-        p {
-          padding-inline-start: 2rem;
-        }
-      }
-    }
-    .bottomCard{
-        color: #fff;
-        background: #696969;
-        padding: 1rem;
-        h4{
-            font-size: 1.8rem;
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            padding: 0.5rem;
-        }
-        .subjectsCourse{
-            display: flex;
-            flex-wrap: wrap;
-            li{
+            background: #696969;
+            padding: 1rem;
+            h4 {
+                font-size: 1.8rem;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                padding: 0.5rem;
+            }
+            .subjectsCourse {
                 display: flex;
-                align-items: flex-start;
-                width: 48%;
-                padding: 8px;
-                p{
-                    font-size: 0.9rem;
-                    line-height: 1rem;
-                    padding-inline-start: 0.5rem;
+                flex-wrap: wrap;
+                li {
+                    display: flex;
+                    align-items: flex-start;
+                    width: 48%;
+                    padding: 8px;
+                    p {
+                        font-size: 0.9rem;
+                        line-height: 1rem;
+                        padding-inline-start: 0.5rem;
+                    }
                 }
             }
         }
     }
-  }
 }

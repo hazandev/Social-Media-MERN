@@ -13,12 +13,14 @@ export const Sidebar = () => {
     const searchText = ev.target.value;
     dispatch({ type: 'EDIT_SEARCH', searchText })
   };
+  const stateHamburger = useSelector((state) => state.uiModule.toggleMenuPhone);
+  const classContainer = stateHamburger ? "closeSidebar" : "";
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${classContainer}`}>
       <div className="sidebarWrapper">
         <div className="topSidebar">
           <nav className="sidebarList">
-            <li className="sidebarListItem" to="">
+            <li className="sidebarListItem searchItem" to="">
               <Search className="sidebarIcon" />
               <input
                 className="sidebarSearch"

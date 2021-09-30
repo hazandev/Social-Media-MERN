@@ -18,8 +18,9 @@ export const SearchList = ({ category, listSearch }) => {
   return (
     <div className="boxSearch animate__animated animate__fadeIn">
       {category === "Users" &&
-        listSearch.map((el) => (
+        listSearch.map((el, index) => (
           <div
+          key={index}
             className="itemSearch"
             onClick={() => {
               clearSearch();
@@ -31,8 +32,9 @@ export const SearchList = ({ category, listSearch }) => {
           </div>
         ))}
       {category === "Articles" &&
-        listSearch.map((el) => (
+        listSearch.map((el, index) => (
           <div
+            key={index}
             className="itemSearch"
             onClick={() => {
               clearSearch();
@@ -47,7 +49,8 @@ export const SearchList = ({ category, listSearch }) => {
             className="itemSearch"
             onClick={() => {
               clearSearch();
-            }} key={index}
+            }} 
+            key={index}
           >
             <CoursePreview course={el} />
           </div>

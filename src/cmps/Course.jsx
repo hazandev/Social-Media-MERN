@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { CoursePreview } from "../cmps/course/CoursePreview";
 import { courseService } from "../services/courseService";
 import Typography from "@material-ui/core/Typography";
@@ -19,19 +19,21 @@ function valuetext(value) {
 export const Course = () => {
   const [search, setSearch] = useState("");
   const classes = useStyles();
-  const [value, setValue] = useState([0, 60]);
+  const [value, setValue] = useState([0, 100]);
   const [courseList, setCourseList] = useState(courseService.query(search,value))
   const handleSlider = (event, newValue) => {
     setValue(newValue);
+    setCourseList(courseService.query(search,value))
   };
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
+    setCourseList(courseService.query(search,value))
   };
   return (
     <div className="course animate__animated animate__fadeInLeft animate__faster">
       <form action="" className="filterCourse">
-        <div>
+        <div className = {`${classes.root}`}>
           <TextField
             id="standard-search"
             label="Search Course"
@@ -58,7 +60,7 @@ export const Course = () => {
       </form>
       <div className="productList courseList">
         {courseList.map((course) => (
-          <CoursePreview key={course.id} course={course} />
+          <CoursePreview key={course._id} course={course} />
         ))}
       </div>
     </div>

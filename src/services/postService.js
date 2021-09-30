@@ -30,5 +30,5 @@ function getById(postId) {
 
 function getPostByUser(userId) {
     return storageService.query('posts').then(posts =>
-        posts.filter(post => post.userId == userId))
+        posts.filter(post => post.userId === userId))
 }

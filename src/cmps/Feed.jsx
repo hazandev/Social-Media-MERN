@@ -4,15 +4,17 @@ import { useState } from "react";
 import { postService } from "../services/postService";
 
 export const Feed = () => {
-  const [posts, setPosts] = useState(postService.query());
+  const posts = useState(postService.query())[0];
   return (
     <div className="feed animate__animated animate__fadeInLeft animate__faster">
       <Share />
-      <ul className="posts">
-        {posts.map(post => 
-          <Post key={post._id} post={post} />
-        )}
-      </ul>
+      {posts && (
+        <ul className="posts">
+          {posts.map((post) => (
+            <Post key={post._id} post={post} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

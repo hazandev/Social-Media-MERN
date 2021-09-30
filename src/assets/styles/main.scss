@@ -3,18 +3,12 @@
 @import "setup/functions";
 @import "setup/mixins";
 @import "setup/typography";
-
 // Basics
 @import "basics/reset";
 @import "basics/helpers";
 @import "basics/base";
 @import "basics/forms";
 @import "basics/button";
-
-//Base
-@import "basics/layout";
-@import "basics/media";
-
 // Components
 @import "cmps/app";
 // @import "cmps/appHeader";
@@ -39,7 +33,6 @@
 @import "cmps/course";
 @import "cmps/courseDetails";
 @import "cmps/courseSide";
-
-
-
-
+//Base
+@import "basics/layout";
+@import "basics/media";

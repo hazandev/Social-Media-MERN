@@ -1,25 +1,26 @@
 .course {
-  width: 100%;
-  .filterCourse {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 2rem;
-
-    .sliderValue {
-      margin-inline-start: 2rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #333;
-       span {
-        color: $primeColor;
-      }
+    .filterCourse {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 2rem;
+        #standard-search {
+            margin-inline-end: 1rem;
+        }
+        .sliderValue {
+            margin-inline-start: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            span {
+                color: $primeColor;
+            }
+        }
     }
-  }
-  .courseList {
-    display: flex;
-    flex-wrap: wrap;
-    .courseSearch {
-      margin: 1rem;
+    .courseList {
+        display: flex;
+        flex-wrap: wrap;
+        .courseSearch {
+            margin: 1rem;
+        }
     }
-  }
 }

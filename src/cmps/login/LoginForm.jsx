@@ -22,7 +22,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="loginForm">
+    <div className="loginForm ">
       <div className="formWrapper">
         <h2>Login</h2>
         <form>

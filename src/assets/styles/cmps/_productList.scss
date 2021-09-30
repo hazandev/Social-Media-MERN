@@ -1,24 +1,22 @@
-.productList{
+.productList {
     margin: 12px;
     max-height: 89vh;
     overflow-y: auto;
-
+    padding-bottom: 5rem;
     // TASK-LIST-SCROLLER
     /*  Scroll Helper   */
     &::-webkit-scrollbar {
         height: 8px;
         width: 8px;
-      }
-  
-      /* Track */
-      &::-webkit-scrollbar-track {
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
         background: rgb(255, 255, 255);
         border-radius: 4px;
-      }
-  
-      /* Handle */
-      &::-webkit-scrollbar-thumb {
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
         background: inherit;
         border-radius: 8px;
-      }
+    }
 }
